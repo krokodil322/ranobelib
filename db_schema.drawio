@@ -1,0 +1,1088 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
+  <diagram name="Страница-1" id="GGHn1M5xYnMmVOP9AIKE">
+    <mxGraphModel dx="2505" dy="2168" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <UserObject label="works" tooltip="Таблица произведений. Этой схемой &#xa;описываются любые произведения на сайте. &#xa;&#xa;Важно заметить, что сами главы любого &#xa;произведения не хранятся в этой таблице,&#xa;а хранятся в таблице Chapters. В этой же&#xa;таблице хранятся только метаданные&#xa;(название, рейтинг, год выхода, статус, и т. п.)." id="zk1Mh9HNXNIhD_PAdACz-1">
+          <mxCell parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="570" width="256" x="324" y="200" as="geometry">
+              <mxRectangle height="30" width="70" x="320" y="350" as="alternateBounds" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" tooltip="Идентификатор произведения" id="zk1Mh9HNXNIhD_PAdACz-2">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-1" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;fontFamily=Lucida Console;fontStyle=0;align=center;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;swimlaneLine=1;labelPosition=center;verticalLabelPosition=middle;verticalAlign=middle;" vertex="1">
+            <mxGeometry height="30" width="256" y="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-3" parent="zk1Mh9HNXNIhD_PAdACz-2" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="PK" vertex="1">
+          <mxGeometry height="30" width="56" as="geometry">
+            <mxRectangle height="30" width="56" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-4" parent="zk1Mh9HNXNIhD_PAdACz-2" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;id&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="200" x="56" as="geometry">
+            <mxRectangle height="30" width="200" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Название произведения на русском" id="zk1Mh9HNXNIhD_PAdACz-5">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-1" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;rounded=0;shadow=0;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="256" y="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-6" parent="zk1Mh9HNXNIhD_PAdACz-5" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="56" as="geometry">
+            <mxRectangle height="30" width="56" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-7" parent="zk1Mh9HNXNIhD_PAdACz-5" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;title_ru&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;STR&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="200" x="56" as="geometry">
+            <mxRectangle height="30" width="200" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Название произведения на языке оригинала" id="zk1Mh9HNXNIhD_PAdACz-8">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-1" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="256" y="90" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-9" parent="zk1Mh9HNXNIhD_PAdACz-8" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="56" as="geometry">
+            <mxRectangle height="30" width="56" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-10" parent="zk1Mh9HNXNIhD_PAdACz-8" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;titile_orig&amp;nbsp; &amp;nbsp; &amp;nbsp; STR&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="200" x="56" as="geometry">
+            <mxRectangle height="30" width="200" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Определяет как название произведения&#xa;будет отображаться в URL.&#xa;&#xa;Например(условно), произведение Re:Zero.&#xa;Если в slug указать re_zero, то в URL:&#xa;https://domen/works/re_zero/chapter_1&#xa;&#xa;Если не указывать slug, то это же&#xa;произведение будет отборажаться как:&#xa;https://domen/works/work_id_23/chapter_1" id="zk1Mh9HNXNIhD_PAdACz-135">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-1" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="256" y="120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-136" parent="zk1Mh9HNXNIhD_PAdACz-135" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;fontFamily=Lucida Console;" value="UNIQUE" vertex="1">
+          <mxGeometry height="30" width="56" as="geometry">
+            <mxRectangle height="30" width="56" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-137" parent="zk1Mh9HNXNIhD_PAdACz-135" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;fontFamily=Lucida Console;" value="slug             STR " vertex="1">
+          <mxGeometry height="30" width="200" x="56" as="geometry">
+            <mxRectangle height="30" width="200" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Описание произведения" id="zk1Mh9HNXNIhD_PAdACz-139">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-1" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="256" y="150" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-140" parent="zk1Mh9HNXNIhD_PAdACz-139" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="56" as="geometry">
+            <mxRectangle height="30" width="56" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-141" parent="zk1Mh9HNXNIhD_PAdACz-139" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;fontFamily=Lucida Console;" value="description      TEXT" vertex="1">
+          <mxGeometry height="30" width="200" x="56" as="geometry">
+            <mxRectangle height="30" width="200" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Путь к папке на сервере с картинкой произведения" id="zk1Mh9HNXNIhD_PAdACz-68">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-1" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="256" y="180" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-69" parent="zk1Mh9HNXNIhD_PAdACz-68" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="56" as="geometry">
+            <mxRectangle height="30" width="56" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-70" parent="zk1Mh9HNXNIhD_PAdACz-68" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;fontFamily=Lucida Console;" value="cover_path       STR" vertex="1">
+          <mxGeometry height="30" width="200" x="56" as="geometry">
+            <mxRectangle height="30" width="200" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Рейтинг произведения" id="zk1Mh9HNXNIhD_PAdACz-84">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-1" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="256" y="210" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-85" parent="zk1Mh9HNXNIhD_PAdACz-84" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="56" as="geometry">
+            <mxRectangle height="30" width="56" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-86" parent="zk1Mh9HNXNIhD_PAdACz-84" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;fontFamily=Lucida Console;" value="rating_avg       DECIMAL" vertex="1">
+          <mxGeometry height="30" width="200" x="56" as="geometry">
+            <mxRectangle height="30" width="200" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Год выхода произведения" id="zk1Mh9HNXNIhD_PAdACz-78">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-1" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="256" y="240" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-79" parent="zk1Mh9HNXNIhD_PAdACz-78" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="56" as="geometry">
+            <mxRectangle height="30" width="56" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-80" parent="zk1Mh9HNXNIhD_PAdACz-78" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;fontFamily=Lucida Console;" value="release_year     INT" vertex="1">
+          <mxGeometry height="30" width="200" x="56" as="geometry">
+            <mxRectangle height="30" width="200" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Счетчик просмотров произведения" id="zk1Mh9HNXNIhD_PAdACz-75">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-1" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="256" y="270" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-76" parent="zk1Mh9HNXNIhD_PAdACz-75" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="56" as="geometry">
+            <mxRectangle height="30" width="56" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-77" parent="zk1Mh9HNXNIhD_PAdACz-75" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;fontFamily=Lucida Console;" value="views_count      INT" vertex="1">
+          <mxGeometry height="30" width="200" x="56" as="geometry">
+            <mxRectangle height="30" width="200" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Счетчик фаворитов. Сколько людей добавило произведение в фавориты" id="zk1Mh9HNXNIhD_PAdACz-81">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-1" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="256" y="300" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-82" parent="zk1Mh9HNXNIhD_PAdACz-81" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="56" as="geometry">
+            <mxRectangle height="30" width="56" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-83" parent="zk1Mh9HNXNIhD_PAdACz-81" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;fontFamily=Lucida Console;" value="favorites_count  INT" vertex="1">
+          <mxGeometry height="30" width="200" x="56" as="geometry">
+            <mxRectangle height="30" width="200" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Счетчик лайков произведения" id="zk1Mh9HNXNIhD_PAdACz-72">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-1" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="256" y="330" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-73" parent="zk1Mh9HNXNIhD_PAdACz-72" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="56" as="geometry">
+            <mxRectangle height="30" width="56" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-74" parent="zk1Mh9HNXNIhD_PAdACz-72" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;fontFamily=Lucida Console;" value="likes_count      INT" vertex="1">
+          <mxGeometry height="30" width="200" x="56" as="geometry">
+            <mxRectangle height="30" width="200" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Опубликовал ли произведение админ.&#xa;&#xa;Состояние данного поля определяет будет&#xa;ли оно отображаться на сайте или нет." id="zk1Mh9HNXNIhD_PAdACz-143">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-1" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="256" y="360" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-144" parent="zk1Mh9HNXNIhD_PAdACz-143" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="56" as="geometry">
+            <mxRectangle height="30" width="56" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-145" parent="zk1Mh9HNXNIhD_PAdACz-143" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;fontFamily=Lucida Console;" value="is_published     BOOL" vertex="1">
+          <mxGeometry height="30" width="200" x="56" as="geometry">
+            <mxRectangle height="30" width="200" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Дата и время создания произведения админом на сайте" id="zk1Mh9HNXNIhD_PAdACz-147">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-1" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="256" y="390" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-148" parent="zk1Mh9HNXNIhD_PAdACz-147" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="56" as="geometry">
+            <mxRectangle height="30" width="56" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-149" parent="zk1Mh9HNXNIhD_PAdACz-147" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;fontFamily=Lucida Console;" value="created_at       DATETIME" vertex="1">
+          <mxGeometry height="30" width="200" x="56" as="geometry">
+            <mxRectangle height="30" width="200" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Дата и время обновления произведения админом" id="zk1Mh9HNXNIhD_PAdACz-151">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-1" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="256" y="420" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-152" parent="zk1Mh9HNXNIhD_PAdACz-151" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="56" as="geometry">
+            <mxRectangle height="30" width="56" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-153" parent="zk1Mh9HNXNIhD_PAdACz-151" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;fontFamily=Lucida Console;" value="updated_at       DATETIME" vertex="1">
+          <mxGeometry height="30" width="200" x="56" as="geometry">
+            <mxRectangle height="30" width="200" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Тип произведения: Ранобэ, фанфик и т. п.&#xa;Данное поле ссылается на справочную таблицу&#xa;work_types.&#xa;&#xa;Под капотом Django добавит к этому полю&#xa;_id, то есть, если название&#xa;work_type, то в реальное БД, Django сделает&#xa;work_type_id." id="zk1Mh9HNXNIhD_PAdACz-97">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-1" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="256" y="450" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-98" parent="zk1Mh9HNXNIhD_PAdACz-97" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;fontFamily=Lucida Console;" value="FK" vertex="1">
+          <mxGeometry height="30" width="56" as="geometry">
+            <mxRectangle height="30" width="56" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-99" parent="zk1Mh9HNXNIhD_PAdACz-97" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;fontFamily=Lucida Console;" value="work_type        INT" vertex="1">
+          <mxGeometry height="30" width="200" x="56" as="geometry">
+            <mxRectangle height="30" width="200" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Описывает текущее состояние произведения:&#xa;Вышло, выходит, анонс, и т. п.&#xa;&#xa;Данное поле ссылкатся на справочную таблицу&#xa;work_statuses&#xa;&#xa;Под капотом Django добавит к этому полю&#xa;_id, то есть, если название&#xa;work_type, то в реальное БД, Django сделает&#xa;work_type_id." id="zk1Mh9HNXNIhD_PAdACz-101">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-1" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="256" y="480" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-102" parent="zk1Mh9HNXNIhD_PAdACz-101" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;fontFamily=Lucida Console;" value="FK" vertex="1">
+          <mxGeometry height="30" width="56" as="geometry">
+            <mxRectangle height="30" width="56" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-103" parent="zk1Mh9HNXNIhD_PAdACz-101" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;fontFamily=Lucida Console;" value="status           INT" vertex="1">
+          <mxGeometry height="30" width="200" x="56" as="geometry">
+            <mxRectangle height="30" width="200" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Язык оригинала.&#xa;&#xa;Данное поле ссылается на справочную таблицу&#xa;work_orig_languages&#xa;&#xa;Под капотом Django добавит к этому полю&#xa;_id, то есть, если название&#xa;work_type, то в реальное БД, Django сделает&#xa;work_type_id." id="zk1Mh9HNXNIhD_PAdACz-105">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-1" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="256" y="510" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-106" parent="zk1Mh9HNXNIhD_PAdACz-105" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;fontFamily=Lucida Console;" value="FK" vertex="1">
+          <mxGeometry height="30" width="56" as="geometry">
+            <mxRectangle height="30" width="56" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-107" parent="zk1Mh9HNXNIhD_PAdACz-105" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;fontFamily=Lucida Console;" value="orig_lang        INT" vertex="1">
+          <mxGeometry height="30" width="200" x="56" as="geometry">
+            <mxRectangle height="30" width="200" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Идентификатор(внешний ключ) возрастного &#xa;рейтинга. Ссылается на справочную таблицу&#xa;age_ratings.&#xa;&#xa;Под капотом Django добавит к этому полю&#xa;_id, то есть, если название&#xa;work_type, то в реальное БД, Django сделает&#xa;work_type_id." id="zk1Mh9HNXNIhD_PAdACz-394">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-1" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;" vertex="1">
+            <mxGeometry height="30" width="256" y="540" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-395" parent="zk1Mh9HNXNIhD_PAdACz-394" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;" value="FK" vertex="1">
+          <mxGeometry height="30" width="56" as="geometry">
+            <mxRectangle height="30" width="56" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-396" parent="zk1Mh9HNXNIhD_PAdACz-394" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;fontFamily=Lucida Console;" value="age_rating       INT" vertex="1">
+          <mxGeometry height="30" width="200" x="56" as="geometry">
+            <mxRectangle height="30" width="200" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="chapters" tooltip="В данной таблице хранятся все главы всех &#xa;произведений.&#xa;&#xa;Любая глава связана с таблицей Works к &#xa;какому-то произведению через связь:&#xa;works_id -&gt; Works.id" id="zk1Mh9HNXNIhD_PAdACz-154">
+          <mxCell parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="240" width="180" x="770" y="200" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" tooltip="Идентификатор главы" id="zk1Mh9HNXNIhD_PAdACz-155">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-154" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="180" y="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-156" parent="zk1Mh9HNXNIhD_PAdACz-155" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="PK" vertex="1">
+          <mxGeometry height="30" width="30" as="geometry">
+            <mxRectangle height="30" width="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-157" parent="zk1Mh9HNXNIhD_PAdACz-155" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="id" vertex="1">
+          <mxGeometry height="30" width="150" x="30" as="geometry">
+            <mxRectangle height="30" width="150" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Идентификатор произведения с которым&#xa;глава связана." id="zk1Mh9HNXNIhD_PAdACz-178">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-154" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="180" y="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-179" parent="zk1Mh9HNXNIhD_PAdACz-178" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="FK" vertex="1">
+          <mxGeometry height="30" width="30" as="geometry">
+            <mxRectangle height="30" width="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-180" parent="zk1Mh9HNXNIhD_PAdACz-178" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="work_id&amp;nbsp; &amp;nbsp; INT" vertex="1">
+          <mxGeometry height="30" width="150" x="30" as="geometry">
+            <mxRectangle height="30" width="150" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Порядковый номер главы. На основе этого&#xa;числа, будет производится сортировка глав.&#xa;&#xa;Важно, чтобы это число было правильным,&#xa;иначе сортировка глав может сломать&#xa;структуру произведения.&#xa;" id="zk1Mh9HNXNIhD_PAdACz-161">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-154" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="180" y="90" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-162" parent="zk1Mh9HNXNIhD_PAdACz-161" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="30" as="geometry">
+            <mxRectangle height="30" width="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-163" parent="zk1Mh9HNXNIhD_PAdACz-161" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="order_num&amp;nbsp; INT" vertex="1">
+          <mxGeometry height="30" width="150" x="30" as="geometry">
+            <mxRectangle height="30" width="150" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Название главы" id="zk1Mh9HNXNIhD_PAdACz-164">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-154" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="180" y="120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-165" parent="zk1Mh9HNXNIhD_PAdACz-164" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="30" as="geometry">
+            <mxRectangle height="30" width="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-166" parent="zk1Mh9HNXNIhD_PAdACz-164" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="title&amp;nbsp; &amp;nbsp; &amp;nbsp; STR" vertex="1">
+          <mxGeometry height="30" width="150" x="30" as="geometry">
+            <mxRectangle height="30" width="150" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="В этом поле хранится сам текст(контент) главы." id="zk1Mh9HNXNIhD_PAdACz-168">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-154" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="180" y="150" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-169" parent="zk1Mh9HNXNIhD_PAdACz-168" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="30" as="geometry">
+            <mxRectangle height="30" width="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-170" parent="zk1Mh9HNXNIhD_PAdACz-168" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;fontFamily=Lucida Console;" value="content    TEXT" vertex="1">
+          <mxGeometry height="30" width="150" x="30" as="geometry">
+            <mxRectangle height="30" width="150" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Дата и время создания главы на сайте админом" id="zk1Mh9HNXNIhD_PAdACz-172">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-154" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="180" y="180" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-173" parent="zk1Mh9HNXNIhD_PAdACz-172" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="30" as="geometry">
+            <mxRectangle height="30" width="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-174" parent="zk1Mh9HNXNIhD_PAdACz-172" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;fontFamily=Lucida Console;" value="created_at DATETIME" vertex="1">
+          <mxGeometry height="30" width="150" x="30" as="geometry">
+            <mxRectangle height="30" width="150" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Дата и время обновления главы админом на сайте" id="zk1Mh9HNXNIhD_PAdACz-175">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-154" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="180" y="210" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-176" parent="zk1Mh9HNXNIhD_PAdACz-175" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="30" as="geometry">
+            <mxRectangle height="30" width="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-177" parent="zk1Mh9HNXNIhD_PAdACz-175" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;fontFamily=Lucida Console;" value="updated_at DATETIME" vertex="1">
+          <mxGeometry height="30" width="150" x="30" as="geometry">
+            <mxRectangle height="30" width="150" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-181" edge="1" parent="1" source="zk1Mh9HNXNIhD_PAdACz-178" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;startArrow=ERmany;startFill=0;" target="zk1Mh9HNXNIhD_PAdACz-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-257" connectable="0" parent="zk1Mh9HNXNIhD_PAdACz-181" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Lucida Console;" value="works(1) &amp;lt;-- chapters N" vertex="1">
+          <mxGeometry relative="1" x="0.0127" y="-2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="work_types" tooltip="Это таблица справочная. В ней хранятся&#xa;все типы произведений.&#xa;&#xa;Например: Ранобэ, фанфик, сянься, и т. п." id="zk1Mh9HNXNIhD_PAdACz-182">
+          <mxCell parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="90" width="180" x="-200" y="200" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-183" parent="zk1Mh9HNXNIhD_PAdACz-182" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="180" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-184" parent="zk1Mh9HNXNIhD_PAdACz-183" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="PK" vertex="1">
+          <mxGeometry height="30" width="50" as="geometry">
+            <mxRectangle height="30" width="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-185" parent="zk1Mh9HNXNIhD_PAdACz-183" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="id" vertex="1">
+          <mxGeometry height="30" width="130" x="50" as="geometry">
+            <mxRectangle height="30" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-186" parent="zk1Mh9HNXNIhD_PAdACz-182" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="180" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-187" parent="zk1Mh9HNXNIhD_PAdACz-186" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="&lt;span style=&quot;text-align: left;&quot;&gt;UNIQUE&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="50" as="geometry">
+            <mxRectangle height="30" width="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-188" parent="zk1Mh9HNXNIhD_PAdACz-186" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="type_name&amp;nbsp; &amp;nbsp;STR&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="130" x="50" as="geometry">
+            <mxRectangle height="30" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-198" edge="1" parent="1" source="zk1Mh9HNXNIhD_PAdACz-97" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startArrow=ERmany;startFill=0;" target="zk1Mh9HNXNIhD_PAdACz-183">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="152" y="670" />
+              <mxPoint x="152" y="245" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="work_statuses" tooltip="Это таблица справочная. В ней хранятся&#xa;все типы состояний произведения.&#xa;&#xa;Например: Вышло, выходит, анонс, и т. п." id="zk1Mh9HNXNIhD_PAdACz-199">
+          <mxCell parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="90" width="180" x="-200" y="360" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-200" parent="zk1Mh9HNXNIhD_PAdACz-199" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="180" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-201" parent="zk1Mh9HNXNIhD_PAdACz-200" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="PK" vertex="1">
+          <mxGeometry height="30" width="50" as="geometry">
+            <mxRectangle height="30" width="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-202" parent="zk1Mh9HNXNIhD_PAdACz-200" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="id" vertex="1">
+          <mxGeometry height="30" width="130" x="50" as="geometry">
+            <mxRectangle height="30" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-203" parent="zk1Mh9HNXNIhD_PAdACz-199" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="180" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-204" parent="zk1Mh9HNXNIhD_PAdACz-203" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="&lt;span style=&quot;text-align: left;&quot;&gt;UNIQUE&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="50" as="geometry">
+            <mxRectangle height="30" width="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-205" parent="zk1Mh9HNXNIhD_PAdACz-203" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="status&amp;nbsp; &amp;nbsp; &amp;nbsp; STR" vertex="1">
+          <mxGeometry height="30" width="130" x="50" as="geometry">
+            <mxRectangle height="30" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-209" edge="1" parent="1" source="zk1Mh9HNXNIhD_PAdACz-101" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startArrow=ERmany;startFill=0;" target="zk1Mh9HNXNIhD_PAdACz-200">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="140" y="700" />
+              <mxPoint x="140" y="405" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="work_orig_langs" tooltip="Это таблица справочная. В ней хранятся&#xa;все языки оригиналов произведений.&#xa;&#xa;Например: Китайский, Японский, Корейский, и т. п." id="zk1Mh9HNXNIhD_PAdACz-210">
+          <mxCell parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="90" width="180" x="-200" y="520" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-211" parent="zk1Mh9HNXNIhD_PAdACz-210" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="180" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-212" parent="zk1Mh9HNXNIhD_PAdACz-211" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="PK" vertex="1">
+          <mxGeometry height="30" width="50" as="geometry">
+            <mxRectangle height="30" width="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-213" parent="zk1Mh9HNXNIhD_PAdACz-211" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="id" vertex="1">
+          <mxGeometry height="30" width="130" x="50" as="geometry">
+            <mxRectangle height="30" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-214" parent="zk1Mh9HNXNIhD_PAdACz-210" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="180" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-215" parent="zk1Mh9HNXNIhD_PAdACz-214" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="&lt;span style=&quot;text-align: left;&quot;&gt;UNIQUE&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="50" as="geometry">
+            <mxRectangle height="30" width="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-216" parent="zk1Mh9HNXNIhD_PAdACz-214" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="lang&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; STR" vertex="1">
+          <mxGeometry height="30" width="130" x="50" as="geometry">
+            <mxRectangle height="30" width="130" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-217" edge="1" parent="1" source="zk1Mh9HNXNIhD_PAdACz-105" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startArrow=ERmany;startFill=0;" target="zk1Mh9HNXNIhD_PAdACz-211">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="130" y="725" />
+              <mxPoint x="130" y="565" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="genres" tooltip="Это таблица справочная. В ней хранятся&#xa;все типы жанров произведений." id="zk1Mh9HNXNIhD_PAdACz-218">
+          <mxCell parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="90" width="180" x="-421.5" y="-200" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-219" parent="zk1Mh9HNXNIhD_PAdACz-218" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="180" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-220" parent="zk1Mh9HNXNIhD_PAdACz-219" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="PK" vertex="1">
+          <mxGeometry height="30" width="51.5" as="geometry">
+            <mxRectangle height="30" width="51.5" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-221" parent="zk1Mh9HNXNIhD_PAdACz-219" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="id" vertex="1">
+          <mxGeometry height="30" width="128.5" x="51.5" as="geometry">
+            <mxRectangle height="30" width="128.5" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-222" parent="zk1Mh9HNXNIhD_PAdACz-218" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="180" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-223" parent="zk1Mh9HNXNIhD_PAdACz-222" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="&lt;span style=&quot;text-align: left;&quot;&gt;UNIQUE&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="51.5" as="geometry">
+            <mxRectangle height="30" width="51.5" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-224" parent="zk1Mh9HNXNIhD_PAdACz-222" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="genre&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;STR" vertex="1">
+          <mxGeometry height="30" width="128.5" x="51.5" as="geometry">
+            <mxRectangle height="30" width="128.5" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="work_genres" tooltip="Данная таблица связывает жанры и произведения.&#xa;&#xa;В данной таблице, хранятся все связи:&#xa;work_id, genre_id. Причем одно произведение&#xa;может иметь множество жанров, соответственно На одно произведение может приходится &#xa;множество записей в данной таблице.&#xa;&#xa;Пара (workd_id, genre_id) должна быть уникальной!" id="zk1Mh9HNXNIhD_PAdACz-225">
+          <mxCell parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="150" width="220" x="-30" y="-200" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-226" parent="zk1Mh9HNXNIhD_PAdACz-225" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="220" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-227" parent="zk1Mh9HNXNIhD_PAdACz-226" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="PK" vertex="1">
+          <mxGeometry height="30" width="50" as="geometry">
+            <mxRectangle height="30" width="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-228" parent="zk1Mh9HNXNIhD_PAdACz-226" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="id" vertex="1">
+          <mxGeometry height="30" width="170" x="50" as="geometry">
+            <mxRectangle height="30" width="170" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Ссылка на произведение" id="zk1Mh9HNXNIhD_PAdACz-229">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-225" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="220" y="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-230" parent="zk1Mh9HNXNIhD_PAdACz-229" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="FK" vertex="1">
+          <mxGeometry height="30" width="50" as="geometry">
+            <mxRectangle height="30" width="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-231" parent="zk1Mh9HNXNIhD_PAdACz-229" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="works_id&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; INT" vertex="1">
+          <mxGeometry height="30" width="170" x="50" as="geometry">
+            <mxRectangle height="30" width="170" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Ссылка на жанр" id="zk1Mh9HNXNIhD_PAdACz-232">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-225" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="220" y="90" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-233" parent="zk1Mh9HNXNIhD_PAdACz-232" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;fontFamily=Lucida Console;" value="FK" vertex="1">
+          <mxGeometry height="30" width="50" as="geometry">
+            <mxRectangle height="30" width="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-234" parent="zk1Mh9HNXNIhD_PAdACz-232" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;fontFamily=Lucida Console;" value="genre_id          INT" vertex="1">
+          <mxGeometry height="30" width="170" x="50" as="geometry">
+            <mxRectangle height="30" width="170" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Эта пара должна быть уникальной!" id="zk1Mh9HNXNIhD_PAdACz-340">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-225" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="220" y="120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-341" parent="zk1Mh9HNXNIhD_PAdACz-340" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;fontFamily=Lucida Console;" value="UNIQUE" vertex="1">
+          <mxGeometry height="30" width="50" as="geometry">
+            <mxRectangle height="30" width="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-342" parent="zk1Mh9HNXNIhD_PAdACz-340" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;fontFamily=Lucida Console;" value="(works_id, genre_id)  " vertex="1">
+          <mxGeometry height="30" width="170" x="50" as="geometry">
+            <mxRectangle height="30" width="170" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-235" edge="1" parent="1" source="zk1Mh9HNXNIhD_PAdACz-229" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=ERmany;startFill=0;" target="zk1Mh9HNXNIhD_PAdACz-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="themes" tooltip="Это таблица справочная. В ней хранятся&#xa;все типы тем произведений." id="zk1Mh9HNXNIhD_PAdACz-237">
+          <mxCell parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="90" width="180" x="-421.5" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-238" parent="zk1Mh9HNXNIhD_PAdACz-237" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="180" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-239" parent="zk1Mh9HNXNIhD_PAdACz-238" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="PK" vertex="1">
+          <mxGeometry height="30" width="51.5" as="geometry">
+            <mxRectangle height="30" width="51.5" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-240" parent="zk1Mh9HNXNIhD_PAdACz-238" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="id" vertex="1">
+          <mxGeometry height="30" width="128.5" x="51.5" as="geometry">
+            <mxRectangle height="30" width="128.5" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-241" parent="zk1Mh9HNXNIhD_PAdACz-237" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="180" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-242" parent="zk1Mh9HNXNIhD_PAdACz-241" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="&lt;span style=&quot;text-align: left;&quot;&gt;UNIQUE&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="51.5" as="geometry">
+            <mxRectangle height="30" width="51.5" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-243" parent="zk1Mh9HNXNIhD_PAdACz-241" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="theme&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;STR&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="128.5" x="51.5" as="geometry">
+            <mxRectangle height="30" width="128.5" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="work_themes" tooltip="Данная таблица связывает тема и произведения.&#xa;&#xa;В данной таблице, хранятся все связи:&#xa;work_id, theme_id. Причем одно произведение&#xa;может иметь множество тем, соответственно&#xa;На одно произведение может приходится &#xa;множество записей в данной таблице.&#xa;&#xa;Пара (work_id, theme_id) - должна быть уникальной!" id="zk1Mh9HNXNIhD_PAdACz-244">
+          <mxCell parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="150" width="220" x="-30" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-245" parent="zk1Mh9HNXNIhD_PAdACz-244" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="220" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-246" parent="zk1Mh9HNXNIhD_PAdACz-245" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="PK" vertex="1">
+          <mxGeometry height="30" width="50" as="geometry">
+            <mxRectangle height="30" width="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-247" parent="zk1Mh9HNXNIhD_PAdACz-245" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="id" vertex="1">
+          <mxGeometry height="30" width="170" x="50" as="geometry">
+            <mxRectangle height="30" width="170" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Ссылка на произведение" id="zk1Mh9HNXNIhD_PAdACz-248">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-244" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="220" y="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-249" parent="zk1Mh9HNXNIhD_PAdACz-248" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="FK" vertex="1">
+          <mxGeometry height="30" width="50" as="geometry">
+            <mxRectangle height="30" width="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-250" parent="zk1Mh9HNXNIhD_PAdACz-248" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="works_id&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; INT" vertex="1">
+          <mxGeometry height="30" width="170" x="50" as="geometry">
+            <mxRectangle height="30" width="170" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Ссылка на тему" id="zk1Mh9HNXNIhD_PAdACz-251">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-244" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;fontFamily=Lucida Console;labelBorderColor=none;" vertex="1">
+            <mxGeometry height="30" width="220" y="90" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-252" parent="zk1Mh9HNXNIhD_PAdACz-251" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;fontFamily=Lucida Console;" value="FK" vertex="1">
+          <mxGeometry height="30" width="50" as="geometry">
+            <mxRectangle height="30" width="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-253" parent="zk1Mh9HNXNIhD_PAdACz-251" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;fontFamily=Lucida Console;" value="theme_id          INT" vertex="1">
+          <mxGeometry height="30" width="170" x="50" as="geometry">
+            <mxRectangle height="30" width="170" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Эта пара должна быть уникальной!" id="zk1Mh9HNXNIhD_PAdACz-336">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-244" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="220" y="120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-337" parent="zk1Mh9HNXNIhD_PAdACz-336" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;fontFamily=Lucida Console;" value="UNIQUE" vertex="1">
+          <mxGeometry height="30" width="50" as="geometry">
+            <mxRectangle height="30" width="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-338" parent="zk1Mh9HNXNIhD_PAdACz-336" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;fontFamily=Lucida Console;" value="(works_id, theme_id)     " vertex="1">
+          <mxGeometry height="30" width="170" x="50" as="geometry">
+            <mxRectangle height="30" width="170" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-255" edge="1" parent="1" source="zk1Mh9HNXNIhD_PAdACz-238" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Lucida Console;" target="zk1Mh9HNXNIhD_PAdACz-251">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-258" connectable="0" parent="zk1Mh9HNXNIhD_PAdACz-255" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Lucida Console;" value="theme(1) ---&amp;gt; works_themes(N)" vertex="1">
+          <mxGeometry relative="1" x="-0.1083" y="3" as="geometry">
+            <mxPoint y="13" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-256" edge="1" parent="1" source="zk1Mh9HNXNIhD_PAdACz-219" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Lucida Console;" target="zk1Mh9HNXNIhD_PAdACz-232">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-259" connectable="0" parent="zk1Mh9HNXNIhD_PAdACz-256" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Lucida Console;" value="genre(1) ---&amp;gt; works_genres(N)" vertex="1">
+          <mxGeometry relative="1" x="-0.0427" y="-1" as="geometry">
+            <mxPoint x="1" y="5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-263" edge="1" parent="1" source="zk1Mh9HNXNIhD_PAdACz-248" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=ERmany;startFill=0;" target="zk1Mh9HNXNIhD_PAdACz-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="fandoms" tooltip="Это таблица справочная. В ней хранятся&#xa;все типы фандомов произведений." id="zk1Mh9HNXNIhD_PAdACz-264">
+          <mxCell parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="90" width="180" x="-421.5" y="-400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-265" parent="zk1Mh9HNXNIhD_PAdACz-264" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="180" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-266" parent="zk1Mh9HNXNIhD_PAdACz-265" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="PK" vertex="1">
+          <mxGeometry height="30" width="51.5" as="geometry">
+            <mxRectangle height="30" width="51.5" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-267" parent="zk1Mh9HNXNIhD_PAdACz-265" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="id" vertex="1">
+          <mxGeometry height="30" width="128.5" x="51.5" as="geometry">
+            <mxRectangle height="30" width="128.5" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-268" parent="zk1Mh9HNXNIhD_PAdACz-264" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="180" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-269" parent="zk1Mh9HNXNIhD_PAdACz-268" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="&lt;span style=&quot;text-align: left;&quot;&gt;UNIQUE&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="51.5" as="geometry">
+            <mxRectangle height="30" width="51.5" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-270" parent="zk1Mh9HNXNIhD_PAdACz-268" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="fandom&amp;nbsp; &amp;nbsp; &amp;nbsp; STR&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="128.5" x="51.5" as="geometry">
+            <mxRectangle height="30" width="128.5" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="work_fandoms" tooltip="Данная таблица связывает фандомы и произведения.&#xa;&#xa;В данной таблице, хранятся все связи:&#xa;work_id, fandom_id. Причем одно произведение может иметь множество фандомов, соответственно&#xa;На одно произведение может приходится &#xa;множество записей в данной таблице.&#xa;&#xa;Пара (works_id, fandom_id) должна быть уникальной!" id="zk1Mh9HNXNIhD_PAdACz-271">
+          <mxCell parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="150" width="220" x="-30" y="-400" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-272" parent="zk1Mh9HNXNIhD_PAdACz-271" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="220" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-273" parent="zk1Mh9HNXNIhD_PAdACz-272" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="PK" vertex="1">
+          <mxGeometry height="30" width="50" as="geometry">
+            <mxRectangle height="30" width="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-274" parent="zk1Mh9HNXNIhD_PAdACz-272" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="id" vertex="1">
+          <mxGeometry height="30" width="170" x="50" as="geometry">
+            <mxRectangle height="30" width="170" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Ссылка на произведение" id="zk1Mh9HNXNIhD_PAdACz-275">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-271" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="220" y="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-276" parent="zk1Mh9HNXNIhD_PAdACz-275" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="FK" vertex="1">
+          <mxGeometry height="30" width="50" as="geometry">
+            <mxRectangle height="30" width="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-277" parent="zk1Mh9HNXNIhD_PAdACz-275" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="works_id&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; INT" vertex="1">
+          <mxGeometry height="30" width="170" x="50" as="geometry">
+            <mxRectangle height="30" width="170" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Ссылка на фандом" id="zk1Mh9HNXNIhD_PAdACz-278">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-271" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="220" y="90" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-279" parent="zk1Mh9HNXNIhD_PAdACz-278" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;fontFamily=Lucida Console;" value="FK" vertex="1">
+          <mxGeometry height="30" width="50" as="geometry">
+            <mxRectangle height="30" width="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-280" parent="zk1Mh9HNXNIhD_PAdACz-278" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;fontFamily=Lucida Console;" value="fandom_id         INT" vertex="1">
+          <mxGeometry height="30" width="170" x="50" as="geometry">
+            <mxRectangle height="30" width="170" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Эта пара должна быть уникальной!" id="zk1Mh9HNXNIhD_PAdACz-344">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-271" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="220" y="120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-345" parent="zk1Mh9HNXNIhD_PAdACz-344" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;fontFamily=Lucida Console;" value="UNIQUE" vertex="1">
+          <mxGeometry height="30" width="50" as="geometry">
+            <mxRectangle height="30" width="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-346" parent="zk1Mh9HNXNIhD_PAdACz-344" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;fontFamily=Lucida Console;" value="(works_id, fandom_id)  " vertex="1">
+          <mxGeometry height="30" width="170" x="50" as="geometry">
+            <mxRectangle height="30" width="170" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-281" edge="1" parent="1" source="zk1Mh9HNXNIhD_PAdACz-265" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Lucida Console;" target="zk1Mh9HNXNIhD_PAdACz-278">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-282" connectable="0" parent="zk1Mh9HNXNIhD_PAdACz-281" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Lucida Console;" value="fandom(1) ---&amp;gt; works_fandoms(N)" vertex="1">
+          <mxGeometry relative="1" x="-0.0427" y="-1" as="geometry">
+            <mxPoint x="1" y="5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-283" edge="1" parent="1" source="zk1Mh9HNXNIhD_PAdACz-275" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=ERmany;startFill=0;" target="zk1Mh9HNXNIhD_PAdACz-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="translators" tooltip="Это таблица справочная. В ней хранятся&#xa;все авторы переводов." id="zk1Mh9HNXNIhD_PAdACz-284">
+          <mxCell parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="90" width="197" x="-500" y="-800" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-285" parent="zk1Mh9HNXNIhD_PAdACz-284" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="197" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-286" parent="zk1Mh9HNXNIhD_PAdACz-285" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="PK" vertex="1">
+          <mxGeometry height="30" width="50" as="geometry">
+            <mxRectangle height="30" width="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-287" parent="zk1Mh9HNXNIhD_PAdACz-285" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="id" vertex="1">
+          <mxGeometry height="30" width="147" x="50" as="geometry">
+            <mxRectangle height="30" width="147" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-288" parent="zk1Mh9HNXNIhD_PAdACz-284" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="197" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-289" parent="zk1Mh9HNXNIhD_PAdACz-288" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="&lt;span style=&quot;text-align: left;&quot;&gt;UNIQUE&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="50" as="geometry">
+            <mxRectangle height="30" width="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-290" parent="zk1Mh9HNXNIhD_PAdACz-288" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="translator&amp;nbsp; &amp;nbsp; &amp;nbsp;STR&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="147" x="50" as="geometry">
+            <mxRectangle height="30" width="147" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="work_translators" tooltip="Данная таблица связывает авторов перевода и произведения.&#xa;&#xa;В данной таблице, хранятся все связи:&#xa;work_id, translate_author_id. Причем одно произведение&#xa;может иметь множество авторов перевода, соответственно&#xa;На одно произведение может приходится &#xa;множество записей в данной таблице.&#xa;&#xa;Пара (works_id, translate_author_id) должна быть уникальной!" id="zk1Mh9HNXNIhD_PAdACz-291">
+          <mxCell parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="150" width="220" x="-30" y="-800" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-292" parent="zk1Mh9HNXNIhD_PAdACz-291" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="220" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-293" parent="zk1Mh9HNXNIhD_PAdACz-292" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="PK" vertex="1">
+          <mxGeometry height="30" width="50" as="geometry">
+            <mxRectangle height="30" width="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-294" parent="zk1Mh9HNXNIhD_PAdACz-292" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="id" vertex="1">
+          <mxGeometry height="30" width="170" x="50" as="geometry">
+            <mxRectangle height="30" width="170" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Ссылка на произведение" id="zk1Mh9HNXNIhD_PAdACz-295">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-291" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="220" y="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-296" parent="zk1Mh9HNXNIhD_PAdACz-295" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="FK" vertex="1">
+          <mxGeometry height="30" width="50" as="geometry">
+            <mxRectangle height="30" width="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-297" parent="zk1Mh9HNXNIhD_PAdACz-295" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="works_id&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; INT" vertex="1">
+          <mxGeometry height="30" width="170" x="50" as="geometry">
+            <mxRectangle height="30" width="170" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Ссылка на автора перевода" id="zk1Mh9HNXNIhD_PAdACz-298">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-291" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="220" y="90" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-299" parent="zk1Mh9HNXNIhD_PAdACz-298" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;fontFamily=Lucida Console;" value="FK" vertex="1">
+          <mxGeometry height="30" width="50" as="geometry">
+            <mxRectangle height="30" width="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-300" parent="zk1Mh9HNXNIhD_PAdACz-298" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;fontFamily=Lucida Console;" value="tanslator_id      INT" vertex="1">
+          <mxGeometry height="30" width="170" x="50" as="geometry">
+            <mxRectangle height="30" width="170" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Эта пара должна быть уникальной!" id="zk1Mh9HNXNIhD_PAdACz-347">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-291" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="220" y="120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-348" parent="zk1Mh9HNXNIhD_PAdACz-347" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;fontFamily=Lucida Console;" value="UNIQUE" vertex="1">
+          <mxGeometry height="30" width="50" as="geometry">
+            <mxRectangle height="30" width="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-349" parent="zk1Mh9HNXNIhD_PAdACz-347" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;fontFamily=Lucida Console;" value="(works_id, translator_id) " vertex="1">
+          <mxGeometry height="30" width="170" x="50" as="geometry">
+            <mxRectangle height="30" width="170" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-301" edge="1" parent="1" source="zk1Mh9HNXNIhD_PAdACz-285" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Lucida Console;" target="zk1Mh9HNXNIhD_PAdACz-298">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-302" connectable="0" parent="zk1Mh9HNXNIhD_PAdACz-301" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Lucida Console;" value="translator(1) ---&amp;gt; works_translators(N)" vertex="1">
+          <mxGeometry relative="1" x="-0.0427" y="-1" as="geometry">
+            <mxPoint x="1" y="5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="authors" tooltip="Это таблица справочная. В ней хранятся&#xa;все авторы произведений." id="zk1Mh9HNXNIhD_PAdACz-304">
+          <mxCell parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="90" width="180" x="-421.5" y="-594" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-305" parent="zk1Mh9HNXNIhD_PAdACz-304" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="180" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-306" parent="zk1Mh9HNXNIhD_PAdACz-305" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="PK" vertex="1">
+          <mxGeometry height="30" width="51.5" as="geometry">
+            <mxRectangle height="30" width="51.5" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-307" parent="zk1Mh9HNXNIhD_PAdACz-305" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="id" vertex="1">
+          <mxGeometry height="30" width="128.5" x="51.5" as="geometry">
+            <mxRectangle height="30" width="128.5" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-308" parent="zk1Mh9HNXNIhD_PAdACz-304" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="180" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-309" parent="zk1Mh9HNXNIhD_PAdACz-308" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="&lt;span style=&quot;text-align: left;&quot;&gt;UNIQUE&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="51.5" as="geometry">
+            <mxRectangle height="30" width="51.5" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-310" parent="zk1Mh9HNXNIhD_PAdACz-308" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="author&amp;nbsp; &amp;nbsp; &amp;nbsp; STR&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="128.5" x="51.5" as="geometry">
+            <mxRectangle height="30" width="128.5" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="work_authors" tooltip="Данная таблица связывает авторов и произведения.&#xa;&#xa;В данной таблице, хранятся все связи:&#xa;work_id, author_id. Причем одно произведение&#xa;может иметь множество авторов, соответственно&#xa;На одно произведение может приходится &#xa;множество записей в данной таблице." id="zk1Mh9HNXNIhD_PAdACz-311">
+          <mxCell parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="150" width="220" x="-30" y="-600" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-312" parent="zk1Mh9HNXNIhD_PAdACz-311" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="220" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-313" parent="zk1Mh9HNXNIhD_PAdACz-312" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="PK" vertex="1">
+          <mxGeometry height="30" width="50" as="geometry">
+            <mxRectangle height="30" width="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-314" parent="zk1Mh9HNXNIhD_PAdACz-312" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="id" vertex="1">
+          <mxGeometry height="30" width="170" x="50" as="geometry">
+            <mxRectangle height="30" width="170" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Ссылка на произведение" id="zk1Mh9HNXNIhD_PAdACz-315">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-311" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="220" y="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-316" parent="zk1Mh9HNXNIhD_PAdACz-315" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="FK" vertex="1">
+          <mxGeometry height="30" width="50" as="geometry">
+            <mxRectangle height="30" width="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-317" parent="zk1Mh9HNXNIhD_PAdACz-315" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="works_id&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; INT" vertex="1">
+          <mxGeometry height="30" width="170" x="50" as="geometry">
+            <mxRectangle height="30" width="170" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Ссылка на фандом" id="zk1Mh9HNXNIhD_PAdACz-318">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-311" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="220" y="90" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-319" parent="zk1Mh9HNXNIhD_PAdACz-318" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;fontFamily=Lucida Console;" value="FK" vertex="1">
+          <mxGeometry height="30" width="50" as="geometry">
+            <mxRectangle height="30" width="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-320" parent="zk1Mh9HNXNIhD_PAdACz-318" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;fontFamily=Lucida Console;" value="author_id         INT" vertex="1">
+          <mxGeometry height="30" width="170" x="50" as="geometry">
+            <mxRectangle height="30" width="170" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Эта пара должна быть уникальной!" id="zk1Mh9HNXNIhD_PAdACz-352">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-311" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="220" y="120" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-353" parent="zk1Mh9HNXNIhD_PAdACz-352" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;fontFamily=Lucida Console;" value="UNIQUE" vertex="1">
+          <mxGeometry height="30" width="50" as="geometry">
+            <mxRectangle height="30" width="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-354" parent="zk1Mh9HNXNIhD_PAdACz-352" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;fontFamily=Lucida Console;" value="(works_id, author_id)  " vertex="1">
+          <mxGeometry height="30" width="170" x="50" as="geometry">
+            <mxRectangle height="30" width="170" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-321" edge="1" parent="1" source="zk1Mh9HNXNIhD_PAdACz-305" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Lucida Console;" target="zk1Mh9HNXNIhD_PAdACz-318">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-322" connectable="0" parent="zk1Mh9HNXNIhD_PAdACz-321" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Lucida Console;" value="author(1) ---&amp;gt; works_authors(N)" vertex="1">
+          <mxGeometry relative="1" x="-0.0427" y="-1" as="geometry">
+            <mxPoint x="1" y="5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-334" edge="1" parent="1" source="zk1Mh9HNXNIhD_PAdACz-295" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=ERmany;startFill=0;" target="zk1Mh9HNXNIhD_PAdACz-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-355" edge="1" parent="1" source="zk1Mh9HNXNIhD_PAdACz-315" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=ERmany;startFill=0;" target="zk1Mh9HNXNIhD_PAdACz-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <UserObject label="age_ratings" tooltip="Это таблица справочная. В ней хранятся&#xa;все виды возрастных рейтингов произведений.&#xa;&#xa;Например: G / PG-13 / R / NC-17&#xa;&#xa;У любого произведения может быть только&#xa;один возрастной рейтинг." id="zk1Mh9HNXNIhD_PAdACz-380">
+          <mxCell parent="1" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;html=1;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="90" width="180" x="-200" y="680" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-381" parent="zk1Mh9HNXNIhD_PAdACz-380" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;fontFamily=Lucida Console;" value="" vertex="1">
+          <mxGeometry height="30" width="180" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-382" parent="zk1Mh9HNXNIhD_PAdACz-381" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=1;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="PK" vertex="1">
+          <mxGeometry height="30" width="51.5" as="geometry">
+            <mxRectangle height="30" width="51.5" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-383" parent="zk1Mh9HNXNIhD_PAdACz-381" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=5;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="id" vertex="1">
+          <mxGeometry height="30" width="128.5" x="51.5" as="geometry">
+            <mxRectangle height="30" width="128.5" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <UserObject label="" tooltip="Название возрастного рейтинга.&#xa;&#xa;Например: G / PG-13 / R / NC-17" id="zk1Mh9HNXNIhD_PAdACz-384">
+          <mxCell parent="zk1Mh9HNXNIhD_PAdACz-380" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;fillColor=none;collapsible=0;dropTarget=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=0;fontFamily=Lucida Console;" vertex="1">
+            <mxGeometry height="30" width="180" y="60" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-385" parent="zk1Mh9HNXNIhD_PAdACz-384" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="&lt;span style=&quot;text-align: left;&quot;&gt;UNIQUE&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="51.5" as="geometry">
+            <mxRectangle height="30" width="51.5" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-386" parent="zk1Mh9HNXNIhD_PAdACz-384" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;whiteSpace=wrap;html=1;fontFamily=Lucida Console;" value="age_rating&amp;nbsp; STR&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="128.5" x="51.5" as="geometry">
+            <mxRectangle height="30" width="128.5" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zk1Mh9HNXNIhD_PAdACz-398" edge="1" parent="1" source="zk1Mh9HNXNIhD_PAdACz-394" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startArrow=ERmany;startFill=0;" target="zk1Mh9HNXNIhD_PAdACz-381">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="110" y="755" />
+              <mxPoint x="110" y="725" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

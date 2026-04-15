@@ -6,7 +6,7 @@ from django.utils.safestring import SafeText
 from django.utils.html import format_html
 
 """
-Схема базы данных расписана в файле fan_guild_database_schema.drawio.
+Схема базы данных расписана в файле db_schema.drawio.
 
 Хочу заметить, что в этой схеме таблиц больше, чем тут. Сразу объясняю
 почему так:

@@ -1,5 +1,6 @@
 from django.db import models
 from django.db.models import Max
+from django.utils import timezone
 
 """
 Схема базы данных расписана в файле fan_guild_database_schema.drawio.
@@ -59,7 +60,12 @@ class Translator(models.Model):
     """Это таблица справочная. В ней хранятся все авторы переводов"""
     
     # полное имя переводчика или команды перевода
-    name = models.CharField("Полное имя переводчика или команды", max_length=255, unique=True)
+    name = models.CharField(
+        "Имя переводчика или команды", 
+        max_length=255, 
+        unique=True,
+        help_text="AI, RanobeList, и т. п."
+    )
     
     class Meta:
         db_table = "translators"
@@ -75,7 +81,12 @@ class Fandom(models.Model):
     """Это таблица справочная. В ней хранятся все типы фандомов произведений"""
     
     # полное название фандома
-    name = models.CharField("Название фандома", max_length=255, unique=True)
+    name = models.CharField(
+        "Название фандома", 
+        max_length=255, 
+        unique=True,
+        help_text="Наруто, Гарри Поттер, и т. п."
+    )
     
     class Meta:
         db_table = "fandoms"
@@ -91,7 +102,12 @@ class Genre(models.Model):
     """Это таблица справочная. В ней хранятся все типы жанров произведений"""
     
     # полное название жанра
-    name = models.CharField("Название жанра", max_length=255, unique=True)
+    name = models.CharField(
+        "Название жанра", 
+        max_length=255, 
+        unique=True,
+        help_text="Фэнтези, Триллер, и т. п."
+    )
     
     class Meta:
         db_table = "genres"
@@ -107,7 +123,12 @@ class Theme(models.Model):
     """Это таблица справочная. В ней хранятся все типы тем произведений"""
     
     # полное название темы
-    name = models.CharField("Название темы", max_length=255, unique=True)
+    name = models.CharField(
+        "Название темы", 
+        max_length=255, 
+        unique=True,
+        help_text="Исэкай, Историческая, и т. п."
+    )
     
     class Meta:
         db_table = "themes"
@@ -126,7 +147,12 @@ class WorkType(models.Model):
     """
     
     # полное название типа произведения
-    name = models.CharField("Название типа", max_length=255, unique=True)
+    name = models.CharField(
+        "Название типа", 
+        max_length=255, 
+        unique=True,
+        help_text="Ранобэ, фанфик, и т. п."
+    )
     
     class Meta:
         db_table = "work_types"
@@ -145,12 +171,17 @@ class WorkStatuse(models.Model):
     """
     
     # полное название статуса произведения
-    name = models.CharField("Название статуса", max_length=255, unique=True)
+    name = models.CharField(
+        "Название статуса", 
+        max_length=255, 
+        unique=True,
+        help_text="Вышло, выходит, анонс, и т. п."
+    )
     
     class Meta:
         db_table = "work_statuses"
-        verbose_name = "Тип"
-        verbose_name_plural = "Типы"
+        verbose_name = "Статус"
+        verbose_name_plural = "Статусы"
         ordering = ["name"]
     
     def __str__(self) -> str:
@@ -162,7 +193,12 @@ class WorkOriginalLanguage(models.Model):
         Это таблица справочная. В ней хранятся все языки оригиналов произведений.
         Например: Китайский, Японский, Корейский, и т. п.
     """
-    name = models.CharField("Язык оригинала", max_length=255, unique=True)
+    name = models.CharField(
+        "Язык оригинала", 
+        max_length=255, 
+        unique=True,
+        help_text="Китайский, Японский, и т. п."
+    )
     
     class Meta:
         db_table = "work_orig_langs"
@@ -185,7 +221,12 @@ class AgeRating(models.Model):
         один возрастной рейтинг.
     """
     # название возрастного рейтинга
-    name = models.CharField("Название возрастного рейтинга", max_length=50, unique=True, null=True)
+    name = models.CharField(
+        "Название возрастного рейтинга", 
+        max_length=50, 
+        unique=True,
+        help_text="R-17, G, PG, PG-13, R, NC-17, и т. п."
+    )
 
     class Meta:
         db_table = "age_ratings"
@@ -209,14 +250,19 @@ class Work(models.Model):
         (название, рейтинг, год выхода, статус, и т. п.).
     """
     # название произведения на русском язке | обязательное поле
-    title_ru = models.CharField("Название на русском", max_length=512)
+    title_ru = models.CharField(
+        "Название на русском", 
+        max_length=512,
+        help_text="Например: Re:Zero. Жизнь с нуля в альтернативном мире"
+    )
 
     # название произведения на языке оригинала Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu
     # необязательное поле
     title_orig = models.CharField(
         "Название на языке оригинала",
         max_length=512,
-        blank=True
+        blank=True,
+        help_text="Например: Re:Zero kara Hajimeru Isekai Seikatsu"
     )
     
     # описание произведения | необязательное  поле
@@ -225,35 +271,74 @@ class Work(models.Model):
     # обложка произведения | обязательное поле
     cover_path = models.ImageField("Обложка", upload_to="works/covers/")
 
-    # рейтинг произведения
+    # рейтинг произведения | Необязательное поле
     rating = models.DecimalField(
         "Рейтинг",
         max_digits=4,
         decimal_places=2,
-        null=True,
+        blank=True,
+        default=0.00,
+        help_text="Рейтинг произведения. Это значение лучше не трогать руками"
+    )
+    
+    help_slug = \
+    """
+        Значения этого поля Django генерирует автоматически.
+        Оно строится на основе поля: Название на русском.
+        Оно нужно для красивого URL, а не абстрактного: wokr_id=322
+        
+        Например: 
+            Из названия:  Re:Zero. Жизнь с нуля в альтернативном мир
+            Получим slug: rezero-zhizn-s-nulya-v-alternativnom-mire
+    """
+    # слаг поле определяет название произведения URL ссылке
+    # вычисляется автоматически Django
+    slug = models.SlugField(
+        "Слаг", 
+        max_length=255, 
+        unique=True,
+        help_text=help_slug
+    )
+    
+    # счетчик просмотров произведения
+    views_count = models.PositiveBigIntegerField(
+        "Просмотры", 
+        default=0,
+        help_text="Счетчик просмотров. Руками это лучше не трогать.",
         blank=True
     )
     
-    # слаг поле определяет название произведения URL ссылке
-    slug = models.SlugField("Слаг", max_length=255, unique=True)
-    
-    # счетчик просмотров произведения
-    views_count = models.PositiveBigIntegerField("Просмотры", default=0)
-    
     # счетчик лайков
-    likes_count = models.PositiveIntegerField("Лайки", default=0)
+    likes_count = models.PositiveIntegerField(
+        "Лайки", 
+        default=0,
+        help_text="Счетчик лайков. Руками это лучше не трогать.",
+        blank=True
+    )
     
     # счетчик фаворитов(сколько юзеров добавило произведение в фавориты)
-    favorites_count = models.PositiveIntegerField("В избранном", default=0)
+    favorites_count = models.PositiveIntegerField(
+        "В избранном", 
+        default=0,
+        help_text="Счетчик людей которые добавили данное произведение в избранное. Руками это лучше не трогать.",
+        blank=True
+    )
 
     # опубликовано ли произведение на сайте(видят ли его юзеры)
-    is_published = models.BooleanField("Опубликовано на сайте", default=True)
+    is_published = models.BooleanField(
+        "Опубликовать на сайте", 
+        default=True,
+        help_text="Данное поле определяет будет ли произведение показано на сайте."
+    )
     
     # когда создал произведение админ на сайте
     created_at = models.DateTimeField("Создано", auto_now_add=True)
 
     # когда админ в последний раз обновлял произведение
     updated_at = models.DateTimeField("Обновлено", auto_now=True)
+    
+    # дата и время публикации произведения на сайте
+    published_at = models.DateTimeField("Опубликовано", auto_now_add=True)
     
     # ====================== СВЯЗИ ОДИН КО МНОГИМ ======================
     # id типа произведения(Ранобэ, фанфик и т. п.)
@@ -269,7 +354,8 @@ class Work(models.Model):
         # немног потноватый параметр
         # он определяет имя через которое мы можем
         # получить ВСЕ произведения которые являются данным жанром
-        related_name="works"
+        related_name="works",
+        help_text="Ранобэ, фанфик, и т. п."
     )
 
     # статус произведения(вышел, выходит, анонс и т. п.)
@@ -279,7 +365,8 @@ class Work(models.Model):
         WorkStatuse,
         on_delete=models.PROTECT,
         verbose_name="Статус",
-        related_name="works"
+        related_name="works",
+        help_text="Вышло, выходит, анонс, и т. п."
     )
     
     # возрастной рейтинг произведения | Необязательное поле
@@ -289,7 +376,8 @@ class Work(models.Model):
         on_delete=models.PROTECT,
         verbose_name="Возрастной рейтинг",
         related_name="works",
-        null=True
+        blank=True,
+        help_text="R-17, G, PG, PG-13, R, NC-17, и т. п."
     )
     
     # язык оригинала | Необязательное поле.
@@ -299,7 +387,8 @@ class Work(models.Model):
         on_delete=models.PROTECT,
         verbose_name="Язык оригинала",
         related_name="works",
-        null=True
+        null=True,
+        help_text="Китайский, Японский, и т. п."
     )
     # ==================================================================
     
@@ -307,8 +396,17 @@ class Work(models.Model):
     # автор или авторы произведения | Обязательное поле
     authors = models.ManyToManyField(
         Author,
-        verbose_name="Автор / Авторы",
+        verbose_name="Авторы",
         related_name="works",
+    )
+    
+    # фандом или фандомы произведения | Необязательное поле.
+    fandoms = models.ManyToManyField(
+        Fandom,
+        verbose_name="Фандомы",
+        related_name="works",
+        blank=True,
+        help_text="Наруто, Гарри Поттер, и т. п."
     )
     
     # жанры произведения | Обязательное поле 
@@ -316,6 +414,7 @@ class Work(models.Model):
         Genre,
         verbose_name="Жанры",
         related_name="works",
+        help_text="Фэнтези, Триллер, и т. п.",
     )
     
     # темы произведения | Необязательное поле
@@ -323,7 +422,8 @@ class Work(models.Model):
         Theme,
         verbose_name="Темы",
         related_name="works",
-        blank=True
+        blank=True,
+        help_text="Исэкай, Историческая, и т. п."
     )
     
     # автор или авторы перевода или команда перевода | Необязательное поле
@@ -331,7 +431,8 @@ class Work(models.Model):
         Translator,
         verbose_name="Авторы перевода",
         related_name="works",
-        blank=True
+        blank=True,
+        help_text="AI, RanobeList, и т. п."
     )
     # ==================================================================
     
@@ -347,6 +448,36 @@ class Work(models.Model):
     def __str__(self) -> str:
         return self.title_ru
     
+    def save(self, *args, **kwargs) -> None:
+        """
+            Смысл данного метода детально описан у Chapter.
+            
+            Тут же, логика расширения заключается в установке
+            времени публикации: published_at только тогда
+            когда произведение действительно было опубликовано.
+        """
+        # self.pk - это id произведения
+        # то есть, если проивездение уже существует
+        if self.pk:
+            old = Work.objects.get(pk=self.pk)
+            
+            # установить публикацию
+            # если объект в БД еще не опубликован, но у того
+            # который сейчас пушат is_published=True(то есть админ опубликовывает)
+            # то меняем published_at
+            if not old.is_published and self.is_published:
+                self.published_at = timezone.now()
+                
+            # убрать публикацию
+            elif old.is_published and not self.is_published:
+                self.published_at = None
+        
+        # если произведение создается сразу опубликованным   
+        else:
+            if self.is_published and not self.published_at:
+                self.published_at = timezone.now()
+        
+        super().save(*args, **kwargs)
     
 class Chapter(models.Model):
     """
@@ -392,6 +523,9 @@ class Chapter(models.Model):
     
     # когда глава произведения была обновлена админом
     updated_at = models.DateTimeField("Обновлено", auto_now=True)
+    
+    # когда глава была опубликована
+    published_at = models.DateTimeField("Опубликовано", auto_now_add=True)
     
     class Meta:
         db_table = "chapters"

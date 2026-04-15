@@ -135,15 +135,16 @@ class WorksAdmin(admin.ModelAdmin):
         "id",
         "title_ru",
         "title_orig",
-        "short_description",
+        "short_description_admin",
         "cover_path",
         "rating",
         "views_count",
         "likes_count",
         "favorites_count",
         "is_published",
-        "created_at_local",
-        "updated_at_local",
+        "created_at_local_admin",
+        "updated_at_local_admin",
+        "published_at_local_admin"
     )
     
     # это поля по которым можно кликнуть чтобы начать редактировать произведение
@@ -152,8 +153,9 @@ class WorksAdmin(admin.ModelAdmin):
     # поля которые нельзя редактировать
     readonly_fields = (
         "cover_preview",
-        "created_at",
-        "updated_at",
+        "created_at_local_admin",
+        "updated_at_local_admin",
+        "published_at_local_admin"
     )
     
     # отвечает за структуру и порядок редактора произведения
@@ -196,8 +198,9 @@ class WorksAdmin(admin.ModelAdmin):
         }),
         ("Служебное", {
             "fields": (
-                "created_at",
-                "updated_at",
+                "created_at_local_admin",
+                "updated_at_local_admin",
+                "published_at_local_admin"
             )
         }),
     )
@@ -256,31 +259,28 @@ class WorksAdmin(admin.ModelAdmin):
     inlines = [ChapterInline]
     
     @admin.display(description="Дата и время создания")
-    def created_at_local(self, obj):
+    def created_at_local_admin(self, obj):
         """Данный метод форматирует дату и время создания в привычный RU формат"""
-        return localtime(obj.created_at).strftime(r"%d.%m.%Y %H:%M")
+        return obj.created_at_local()
     
     @admin.display(description="Дата и время изменения")
-    def updated_at_local(self, obj):
+    def updated_at_local_admin(self, obj):
         """Данный метод форматирует дату и время изменения в привычный RU формат"""
-        return localtime(obj.updated_at).strftime(r"%d.%m.%Y %H:%M")
+        return obj.updated_at_local(obj)
     
     @admin.display(description="Дата и время публикации")
-    def published_at_local(self, obj):
-        """Данный метод форматирует дату и время изменения в привычный RU формат"""
-        return localtime(obj.published_at).strftime(r"%d.%m.%Y %H:%M")
+    def published_at_local_admin(self, obj):
+        """Данный метод форматирует дату и время публикации произведения в привычный RU формат"""
+        return obj.published_at_local()
     
     @admin.display(description="Описание")
-    def short_description(self, obj) -> str:
+    def short_description_admin(self, obj) -> str:
         """
             Данный метод сокращает описание произведения в админке.
             Это нужно, чтобы само описание жестко не спамилось в админке,
             ибо оно может занимать довольно много места.
         """
-        if not obj.description:
-            return '-'
-        text = obj.description.strip()
-        return text[:10] + "..." if len(text) > 10 else text
+        return obj.short_description()
     
     @admin.display(description="Обложка")
     def cover_preview(self, obj) -> str | SafeText:
@@ -289,18 +289,12 @@ class WorksAdmin(admin.ModelAdmin):
             произведения в админке. Чтобы в поле картинки
             стояла картинка, а не просто путь.
         """
-        if not obj or not obj.pk:
-            return "Сначала сохраните произведение."
-        if not obj.cover_path:
-            return "Обложка не загружена."
-        return format_html(
-            '<img src="{}" style="max-height: 300px; max-width: 220px; border: 1px solid #ccc;" />',
-            obj.cover_path.url
-        )
+        return obj.cover_preview()
     
     
 @admin.register(Chapter)
 class ChaptersAdmin(admin.ModelAdmin):
+    """Регистрация и настройка глав в админке"""
     list_display = (
         "id",
         "work",

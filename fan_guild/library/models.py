@@ -1,6 +1,9 @@
 from django.db import models
 from django.db.models import Max
 from django.utils import timezone
+from django.utils.timezone import localtime
+from django.utils.safestring import SafeText
+from django.utils.html import format_html
 
 """
 Схема базы данных расписана в файле fan_guild_database_schema.drawio.
@@ -249,6 +252,16 @@ class Work(models.Model):
         таблице хранятся только метаданные
         (название, рейтинг, год выхода, статус, и т. п.).
     """
+    
+    class Meta:
+        db_table = "works"
+        verbose_name = "Произведения"
+        verbose_name_plural = "Произведения"
+        
+        # это поле определяет сортировку работа в БД
+        # порядок будет такой: Самые свежие будут сверху.
+        ordering = ["-updated_at"]
+    
     # название произведения на русском язке | обязательное поле
     title_ru = models.CharField(
         "Название на русском", 
@@ -338,7 +351,7 @@ class Work(models.Model):
     updated_at = models.DateTimeField("Обновлено", auto_now=True)
     
     # дата и время публикации произведения на сайте
-    published_at = models.DateTimeField("Опубликовано", auto_now_add=True)
+    published_at = models.DateTimeField("Опубликовано", blank=True, null=True)
     
     # ====================== СВЯЗИ ОДИН КО МНОГИМ ======================
     # id типа произведения(Ранобэ, фанфик и т. п.)
@@ -436,15 +449,6 @@ class Work(models.Model):
     )
     # ==================================================================
     
-    class Meta:
-        db_table = "works"
-        verbose_name = "Произведения"
-        verbose_name_plural = "Произведения"
-        
-        # это поле определяет сортировку работа в БД
-        # порядок будет такой: Самые свежие будут сверху.
-        ordering = ["-updated_at"]
-    
     def __str__(self) -> str:
         return self.title_ru
     
@@ -479,6 +483,47 @@ class Work(models.Model):
         
         super().save(*args, **kwargs)
     
+    def created_at_local(self):
+        """Данный метод форматирует дату и время создания в привычный RU формат"""
+        return localtime(self.created_at).strftime(r"%d.%m.%Y %H:%M")
+    
+    def updated_at_local(self, obj):
+        """Данный метод форматирует дату и время изменения в привычный RU формат"""
+        return localtime(obj.updated_at).strftime(r"%d.%m.%Y %H:%M")
+    
+    def published_at_local(self):
+        """Данный метод форматирует дату и время публикации произведения в привычный RU формат"""
+        if not self.published_at:
+            return '-'
+        return localtime(self.published_at).strftime(r"%d.%m.%Y %H:%M")
+    
+    def short_description(self) -> str:
+        """
+            Данный метод сокращает описание произведения в админке.
+            Это нужно, чтобы само описание жестко не спамилось в админке,
+            ибо оно может занимать довольно много места.
+        """
+        if not self.description:
+            return '-'
+        text = self.description.strip()
+        return text[:10] + "..." if len(text) > 10 else text
+    
+    def cover_preview(self) -> str | SafeText:
+        """
+            Данный метод нужен для превью обложки 
+            произведения в админке. Чтобы в поле картинки
+            стояла картинка, а не просто путь.
+        """
+        if not self or not self.pk:
+            return "Сначала сохраните произведение."
+        if not self.cover_path:
+            return "Обложка не загружена."
+        return format_html(
+            '<img src="{}" style="max-height: 300px; max-width: 220px; border: 1px solid #ccc;" />',
+            self.cover_path.url
+        )
+    
+    
 class Chapter(models.Model):
     """
         В данной таблице хранятся все главы всех 
@@ -488,6 +533,25 @@ class Chapter(models.Model):
         какому-то произведению через связь:
         works_id -> Works.id
     """
+    
+    class Meta:
+        db_table = "chapters"
+        verbose_name = "Глава"
+        verbose_name_plural = "Главы"
+        ordering = ["work_id", "order_num"]
+
+        # это ограничение на уникальность пары
+        # (work_id, order_num) это нужно чтобы
+        # не допускалось создание дублей, что у одного
+        # произведения, есть 2 и более глав которые имеют
+        # одинаковые order_num, это не допустимо.
+        constraints = [
+            models.UniqueConstraint(
+                fields=["work", "order_num"],
+                name="unique_chapter_order_per_work"
+            )
+        ]
+        
     # произведение к которому принадлежит глава
     # при удалении произведения(Works), главы удалятся
     # автоматически.
@@ -526,25 +590,7 @@ class Chapter(models.Model):
     
     # когда глава была опубликована
     published_at = models.DateTimeField("Опубликовано", auto_now_add=True)
-    
-    class Meta:
-        db_table = "chapters"
-        verbose_name = "Глава"
-        verbose_name_plural = "Главы"
-        ordering = ["work_id", "order_num"]
-
-        # это ограничение на уникальность пары
-        # (work_id, order_num) это нужно чтобы
-        # не допускалось создание дублей, что у одного
-        # произведения, есть 2 и более глав которые имеют
-        # одинаковые order_num, это не допустимо.
-        constraints = [
-            models.UniqueConstraint(
-                fields=["work", "order_num"],
-                name="unique_chapter_order_per_work"
-            )
-        ]
-    
+      
     def save(self, *args, **kwargs):
         """
             Данные метод очень важен для удобного функционала модели.

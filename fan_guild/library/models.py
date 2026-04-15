@@ -255,7 +255,7 @@ class Work(models.Model):
     
     class Meta:
         db_table = "works"
-        verbose_name = "Произведения"
+        verbose_name = "Произведение"
         verbose_name_plural = "Произведения"
         
         # это поле определяет сортировку работа в БД

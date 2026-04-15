@@ -41,5 +41,5 @@ http://127.0.0.1:8000/admin
 username: admin228
 password: HBdB#?HUssX#SW'd*K+~+5M^!#Qu9h.R
 ```
-12. Можно тестить.
+12. Можно тестить
 

@@ -1,0 +1,888 @@
+@font-face {
+    font-family: "JetBrains Mono Embedded";
+    src: url("./Fonts/JetBrainsMono-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Inter Embedded";
+    src: url("./Fonts/Inter-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Merriweather Embedded";
+    src: url("./Fonts/Merriweather-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "PT Serif Embedded";
+    src: url("./Fonts/PTSerif-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --page-bg: #14161a;
+    --shell-bg: #1b1e24;
+
+    --panel-bg: #1f232b;
+    --panel-text: #e7ebf3;
+    --panel-border: #313743;
+    --divider: #3a404c;
+
+    --header-bg: #252a33;
+    --header-text: #d9dee8;
+
+    --blockquote-bg: #262c36;
+    --inline-code-bg: #2b313c;
+
+    --toolbar-bg: rgba(18, 20, 26, 0.96);
+    --toolbar-text: #eef2f7;
+    --toolbar-border: rgba(255, 255, 255, 0.12);
+
+    --radius: 16px;
+    --shadow: 0 18px 48px rgba(0, 0, 0, 0.35);
+
+    --font-size: 18px;
+    --editor-font: "JetBrains Mono Embedded", "Cascadia Code", Consolas, "Courier New", monospace;
+    --preview-font: "Merriweather Embedded", "PT Serif Embedded", Georgia, "Times New Roman", serif;
+
+    --single-content-width: 900px;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--page-bg);
+    color: var(--toolbar-text);
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+/* Верхняя зона, по которой вызывается toolbar */
+.top-hover-zone {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 22px;
+    z-index: 1001;
+}
+
+/* Toolbar */
+.toolbar {
+    position: fixed;
+    top: 0;
+    left: 150px;
+    right: 150px;
+    z-index: 1000;
+
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 12px;
+
+    background: var(--toolbar-bg);
+    color: var(--toolbar-text);
+    border: 1px solid var(--toolbar-border);
+    border-top: none;
+    border-radius: 0 0 14px 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(8px);
+
+    overflow: hidden;
+
+    transform: translateY(-100%);
+    transition: transform 0.22s ease;
+}
+
+body.toolbar-visible .toolbar {
+    transform: translateY(0);
+}
+
+.toolbar-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex: 0 0 auto;
+    white-space: nowrap;
+    min-width: 0;
+}
+
+.toolbar-group label {
+    font-size: 12px;
+    line-height: 1;
+    color: color-mix(in srgb, var(--toolbar-text) 78%, transparent);
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: default;
+}
+
+.toolbar select,
+.toolbar button,
+.toolbar input[type="range"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.toolbar select,
+.toolbar button {
+    height: 34px;
+    border: 1px solid var(--toolbar-border);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--toolbar-text);
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+.toolbar select {
+    min-width: 96px;
+    max-width: 132px;
+    padding-right: 34px;
+    background-image:
+        linear-gradient(45deg, transparent 50%, currentColor 50%),
+        linear-gradient(135deg, currentColor 50%, transparent 50%);
+    background-position:
+        calc(100% - 18px) 15px,
+        calc(100% - 12px) 15px;
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+}
+
+.toolbar button {
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease, opacity 0.15s ease;
+}
+
+.toolbar button:hover,
+.toolbar select:hover {
+    background-color: rgba(255, 255, 255, 0.10);
+}
+
+.toolbar button.active {
+    background: rgba(255, 255, 255, 0.16);
+}
+
+.toolbar button:disabled {
+    opacity: 0.45;
+    cursor: default;
+}
+
+.toolbar select:focus,
+.toolbar button:focus,
+.toolbar input[type="range"]:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.22);
+}
+
+.toolbar option {
+    background: #252932;
+    color: #eef1f4;
+}
+
+.toolbar input[type="range"] {
+    width: 84px;
+    height: 4px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.18);
+    border: none;
+    padding: 0;
+}
+
+.toolbar input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: none;
+    background: var(--toolbar-text);
+    cursor: pointer;
+}
+
+.toolbar input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: none;
+    background: var(--toolbar-text);
+    cursor: pointer;
+}
+
+#fontSizeValue {
+    min-width: 34px;
+    font-size: 12px;
+    color: color-mix(in srgb, var(--toolbar-text) 82%, transparent);
+}
+
+/* Основной контейнер */
+.app-shell {
+    height: 100vh;
+    padding: 24px;
+}
+
+.workspace {
+    height: 100%;
+    display: flex;
+    gap: 0;
+    background: var(--shell-bg);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 0;
+    background: var(--panel-bg);
+    color: var(--panel-text);
+}
+
+.editor-panel,
+.preview-panel {
+    flex: 1 1 0;
+}
+
+.panel-header {
+    flex: 0 0 auto;
+    width: 100%;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    background: var(--header-bg);
+    color: var(--header-text);
+    border-bottom: 1px solid var(--panel-border);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.divider {
+    flex: 0 0 1px;
+    width: 1px;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        var(--divider) 8%,
+        var(--divider) 92%,
+        transparent 100%
+    );
+}
+
+/* Редактор и предпросмотр */
+#editor,
+#preview {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: auto;
+    padding: 22px;
+    font-size: var(--font-size);
+    line-height: 1.75;
+    background-color: var(--panel-bg);
+    color: var(--panel-text);
+}
+
+#editor {
+    width: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+    font-family: var(--editor-font);
+    background-color: var(--panel-bg);
+    color: var(--panel-text);
+    caret-color: var(--panel-text);
+}
+
+#editor::placeholder {
+    color: rgba(160, 160, 170, 0.75);
+}
+
+#preview {
+    font-family: var(--preview-font);
+    word-break: break-word;
+}
+
+#preview > :first-child {
+    margin-top: 0;
+}
+
+#preview > :last-child {
+    margin-bottom: 0;
+}
+
+#preview h1,
+#preview h2,
+#preview h3,
+#preview h4,
+#preview h5,
+#preview h6 {
+    line-height: 1.25;
+    margin-top: 1.3em;
+    margin-bottom: 0.6em;
+}
+
+#preview p,
+#preview ul,
+#preview ol,
+#preview pre,
+#preview blockquote {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+#preview img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 18px auto;
+    border-radius: 8px;
+}
+
+#preview blockquote {
+    margin-left: 0;
+    padding: 12px 16px;
+    background: var(--blockquote-bg);
+    border-left: 4px solid color-mix(in srgb, var(--panel-text) 35%, transparent);
+}
+
+#preview code {
+    background: var(--inline-code-bg);
+    padding: 2px 6px;
+    border-radius: 5px;
+}
+
+#preview pre {
+    background: var(--inline-code-bg);
+    padding: 14px;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+#preview pre code {
+    background: transparent;
+    padding: 0;
+}
+
+#preview hr {
+    border: none;
+    border-top: 1px solid var(--panel-border);
+    margin: 24px 0;
+}
+
+#preview ul,
+#preview ol {
+    padding-left: 24px;
+}
+
+#preview table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1em;
+}
+
+#preview th,
+#preview td {
+    padding: 10px 12px;
+    border: 1px solid var(--panel-border);
+    text-align: left;
+}
+
+/* Тонкие скроллбары */
+#editor,
+#preview,
+.toolbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(120, 120, 120, 0.55) transparent;
+}
+
+#editor::-webkit-scrollbar,
+#preview::-webkit-scrollbar,
+.toolbar::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+}
+
+#editor::-webkit-scrollbar-track,
+#preview::-webkit-scrollbar-track,
+.toolbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#editor::-webkit-scrollbar-thumb,
+#preview::-webkit-scrollbar-thumb,
+.toolbar::-webkit-scrollbar-thumb {
+    background: rgba(110, 110, 110, 0.45);
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+#editor::-webkit-scrollbar-thumb:hover,
+#preview::-webkit-scrollbar-thumb:hover,
+.toolbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(90, 90, 90, 0.70);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+/* Режимы layout */
+body.single-mode .editor-panel,
+body.single-mode .preview-panel {
+    flex: 1 1 100%;
+}
+
+/* В single mode делаем контент уже и ближе к центру */
+body.single-mode .editor-panel,
+body.single-mode .preview-panel {
+    align-items: center;
+}
+
+body.single-mode #editor,
+body.single-mode #preview {
+    width: 100%;
+    max-width: var(--single-content-width);
+    margin: 0 auto;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+body.single-mode.view-editor .preview-panel,
+body.single-mode.view-editor .divider {
+    display: none;
+}
+
+body.single-mode.view-preview .editor-panel,
+body.single-mode.view-preview .divider {
+    display: none;
+}
+
+body.split-mode #singleModeGroup {
+    opacity: 0.45;
+}
+
+body.split-mode #singleModeGroup button {
+    pointer-events: none;
+}
+
+/* Темы */
+body.theme-dark {
+    --page-bg: #14161a;
+    --shell-bg: #1b1e24;
+
+    --panel-bg: #1f232b;
+    --panel-text: #e7ebf3;
+    --panel-border: #313743;
+    --divider: #3a404c;
+
+    --header-bg: #252a33;
+    --header-text: #d9dee8;
+
+    --blockquote-bg: #262c36;
+    --inline-code-bg: #2b313c;
+
+    --toolbar-bg: rgba(18, 20, 26, 0.96);
+    --toolbar-text: #eef2f7;
+    --toolbar-border: rgba(255, 255, 255, 0.12);
+}
+
+body.theme-light {
+    --page-bg: #ececec;
+    --shell-bg: #d9d9d9;
+
+    --panel-bg: #ffffff;
+    --panel-text: #171717;
+    --panel-border: #dddddd;
+    --divider: #c5c5c5;
+
+    --header-bg: #f3f3f3;
+    --header-text: #222222;
+
+    --blockquote-bg: #f4f4f4;
+    --inline-code-bg: #f1f1f1;
+
+    --toolbar-bg: rgba(250, 250, 250, 0.96);
+    --toolbar-text: #141414;
+    --toolbar-border: rgba(0, 0, 0, 0.10);
+}
+
+body.theme-light .toolbar select,
+body.theme-light .toolbar button {
+    background: rgba(0, 0, 0, 0.04);
+    color: var(--toolbar-text);
+}
+
+body.theme-light .toolbar select:hover,
+body.theme-light .toolbar button:hover {
+    background: rgba(0, 0, 0, 0.08);
+}
+
+body.theme-light .toolbar option {
+    background: #ffffff;
+    color: #111111;
+}
+
+body.theme-sepia {
+    --page-bg: #2a241c;
+    --shell-bg: #3a3126;
+
+    --panel-bg: #f3e7d3;
+    --panel-text: #3a2d1d;
+    --panel-border: #d6c4aa;
+    --divider: #ae9773;
+
+    --header-bg: #e5d3bc;
+    --header-text: #3a2d1d;
+
+    --blockquote-bg: #eadcc7;
+    --inline-code-bg: #e5d6bf;
+
+    --toolbar-bg: rgba(54, 42, 28, 0.95);
+    --toolbar-text: #f3e7d3;
+    --toolbar-border: rgba(255, 255, 255, 0.08);
+}
+
+body.theme-sepia .toolbar option {
+    background: #4a3a29;
+    color: #f3e7d3;
+}
+
+body.theme-graphite {
+    --page-bg: #101214;
+    --shell-bg: #181b20;
+
+    --panel-bg: #20242a;
+    --panel-text: #ecf0f4;
+    --panel-border: #343a43;
+    --divider: #414853;
+
+    --header-bg: #2a2f37;
+    --header-text: #e4e9ef;
+
+    --blockquote-bg: #2a3038;
+    --inline-code-bg: #2f353e;
+
+    --toolbar-bg: rgba(18, 20, 24, 0.96);
+    --toolbar-text: #eef1f4;
+    --toolbar-border: rgba(255, 255, 255, 0.12);
+}
+
+body.theme-graphite .toolbar option,
+body.theme-dark .toolbar option {
+    background: #252932;
+    color: #eef1f4;
+}
+
+/* Шрифты */
+body.editor-font-monospace {
+    --editor-font: "JetBrains Mono Embedded", "Cascadia Code", Consolas, "Courier New", monospace;
+}
+
+body.editor-font-inter {
+    --editor-font: Inter, Arial, sans-serif;
+}
+
+body.editor-font-arial {
+    --editor-font: Arial, sans-serif;
+}
+
+body.editor-font-georgia {
+    --editor-font: Georgia, "Times New Roman", serif;
+}
+
+body.preview-font-serif {
+    --preview-font: "Merriweather Embedded", "PT Serif Embedded", Georgia, "Times New Roman", serif;
+}
+
+body.preview-font-inter {
+    --preview-font: Inter, Arial, sans-serif;
+}
+
+body.preview-font-arial {
+    --preview-font: Arial, sans-serif;
+}
+
+body.preview-font-monospace {
+    --preview-font: Consolas, Monaco, monospace;
+}
+
+/* Адаптация */
+@media (max-width: 900px) {
+    .toolbar {
+        left: 10px;
+        right: 10px;
+        gap: 6px;
+        padding: 8px 10px;
+    }
+
+    .app-shell {
+        padding: 12px;
+    }
+
+    .workspace {
+        border-radius: 12px;
+    }
+
+    body.split-mode .workspace {
+        flex-direction: column;
+    }
+
+    body.split-mode .divider {
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(
+            to right,
+            transparent 0%,
+            var(--divider) 8%,
+            var(--divider) 92%,
+            transparent 100%
+        );
+    }
+
+    body.split-mode .editor-panel,
+    body.split-mode .preview-panel {
+        min-height: 0;
+    }
+}
+
+
+/* Нельзя выделять и трогать текст интерфейса */
+.toolbar label,
+.toolbar span,
+.toolbar button,
+.panel-header {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.toolbar label,
+.toolbar span,
+.panel-header {
+    cursor: default;
+}
+
+#editor,
+#preview {
+    user-select: text;
+}
+
+.toolbar select {
+    text-overflow: ellipsis;
+}
+
+#saveChapterBtn {
+    padding: 0 9px;
+}
+
+#exportMarkdownBtn {
+    width: 34px;
+    min-width: 34px;
+    height: 34px;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1;
+}
+
+body.view-preview #editor {
+    caret-color: transparent !important;
+}
+
+body.view-preview #preview,
+#preview:focus,
+#focusSink:focus {
+    outline: none;
+    cursor: default;
+}
+
+#focusSink {
+    position: fixed;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Весь интерфейс, кроме редактора и просмотра, не должен давать текстовый курсор */
+body,
+.app-shell,
+.workspace,
+.panel,
+.panel-header,
+.toolbar,
+.toolbar * {
+    cursor: default;
+}
+
+/* Надписи интерфейса нельзя выделять */
+.toolbar label,
+.toolbar span,
+.panel-header,
+.top-hover-zone {
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Кнопки тоже не выделяются */
+.toolbar button {
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Но редактор и просмотр — нормальные */
+#editor {
+    cursor: text;
+    user-select: text;
+}
+
+#preview {
+    cursor: default;
+    user-select: text;
+}
+
+/* В preview-режиме скрываем caret у редактора */
+body.view-preview #editor {
+    caret-color: transparent !important;
+}
+
+/* Убираем outline у preview и у фонового sink */
+#preview:focus,
+#focusSink:focus {
+    outline: none;
+}
+
+#focusSink {
+    position: fixed;
+    width: 1px;
+    height: 1px;
+    left: -9999px;
+    top: -9999px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+.chapter-title-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.chapter-title-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-color, #d7d7d7);
+}
+
+.chapter-title-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.04);
+    color: inherit;
+    font: inherit;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.chapter-title-input:focus {
+    border-color: rgba(120, 170, 255, 0.7);
+    box-shadow: 0 0 0 3px rgba(120, 170, 255, 0.18);
+}
+
+.chapter-title-input::placeholder {
+    color: rgba(255, 255, 255, 0.38);
+}
+
+/* toast */
+.toast {
+    position: fixed;
+    left: 50%;
+    bottom: 24px;
+    transform: translateX(-50%) translateY(16px);
+    min-width: 220px;
+    max-width: 360px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.toast.success {
+    background: #1f8f4e;
+}
+
+.toast.error {
+    background: #b63b3b;
+}
+
+.preview-chapter-title {
+    margin: 0 0 24px 0;
+    font-size: 25px;
+    line-height: 1.25;
+    font-weight: 700;
+    text-align: left;
+}
+
+.back-to-admin-btn {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+    transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.back-to-admin-btn:hover {
+    background: rgba(255, 255, 255, 0.16);
+}
+
+.back-to-admin-btn:active {
+    transform: translateY(1px);
+}

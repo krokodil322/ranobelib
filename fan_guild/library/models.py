@@ -649,6 +649,10 @@ class Chapter(models.Model):
             )
             # если нет номера, то 1, если есть то делаем +1
             self.order_num = 1 if max_order is None else max_order + 1
+        
+        # если произведение опубликовано, то и добавленные главы тоже публикуем.
+        if self.work.is_published:
+            self.published_at = timezone.now.strftime(r"%d.%m.%Y %H:%M")
 
         # вызываем стандартное  Django поведение
         super().save(*args, **kwargs)

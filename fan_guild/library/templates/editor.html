@@ -1,0 +1,122 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novel Editor</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="{% static 'editor.css' %}">
+</head>
+<body 
+    class="theme-dark split-mode"
+    data-chapter-id="{{ chapter.id }}"
+    data-save-url="{% url 'save_chapter' slug=chapter.work.slug chapter_id=chapter.id %}"
+>
+    <div id="focusSink" tabindex="-1" aria-hidden="true"></div>
+    <div class="top-hover-zone"></div>
+
+    <!---- НАЧАЛО ВЕРХНЕЙ ПАНЕЛИ ИНСТРУМЕНТОВ -->
+    <header class="toolbar" id="toolbar">
+        <a href="{{ admin_back_url }}" class="back-to-admin-btn">
+            ← В админку
+        </a>
+        <div class="toolbar-group">
+            <label>Режим окна</label>
+            <select id="layoutMode">
+                <option value="split">Два окна</option>
+                <option value="single">Одно окно</option>
+            </select>
+        </div>
+
+        <div class="toolbar-group" id="singleModeGroup">
+            <label>Режим</label>
+            <button class="mode-btn active" data-view="editor">Редактор</button>
+            <button class="mode-btn" data-view="preview">Просмотр</button>
+        </div>
+
+        <div class="toolbar-group">
+            <label>Тема</label>
+            <select id="themeSelect">
+                <option value="dark">Dark</option>
+                <option value="light">Light</option>
+                <option value="sepia">Sepia</option>
+                <option value="graphite">Graphite</option>
+            </select>
+        </div>
+
+        <div class="toolbar-group">
+            <label>Шрифт редактора</label>
+            <select id="editorFont">
+                <option value="monospace">Monospace</option>
+                <option value="inter">Inter</option>
+                <option value="arial">Arial</option>
+                <option value="georgia">Georgia</option>
+            </select>
+        </div>
+
+        <div class="toolbar-group">
+            <label>Шрифт просмотра</label>
+            <select id="previewFont">
+                <option value="serif">Serif</option>
+                <option value="inter">Inter</option>
+                <option value="arial">Arial</option>
+                <option value="monospace">Monospace</option>
+            </select>
+        </div>
+
+        <div class="toolbar-group">
+            <label>Размер</label>
+            <input id="fontSize" type="range" min="14" max="28" value="18">
+            <span id="fontSizeValue">18px</span>
+        </div>
+
+        <div class="toolbar-group">
+            <button type="button" id="saveChapterBtn">Сохранить главу</button>
+        </div>
+
+        <div class="toolbar-group">
+            <button type="button" id="exportMarkdownBtn" title="Выгрузить markdown">⤓</button>
+        </div>
+    </header>
+    <!---- КОНЕЦ ВЕРХНЕЙ ПАНЕЛИ ИНСТРУМЕНТОВ -->
+
+    <main class="app-shell">
+        <section class="workspace" id="workspace">
+            <div class="panel editor-panel" id="editorPanel">
+                <div class="panel-header">Markdown</div>
+                
+                <!-- НАЗВАНИЕ ГЛАВЫ -->
+                <div class="chapter-title-wrap">
+                    <label for="chapterTitle" class="chapter-title-label"></label>
+                    <input
+                        type="text"
+                        id="chapterTitle"
+                        class="chapter-title-input"
+                        name="title"
+                        value="{{ chapter.title|default:'' }}"
+                        placeholder="Введите название главы"
+                        maxlength="255"
+                    >
+                <!-- КОНЕЦ НАЗВАНИЕ ГЛАВЫ -->
+
+                </div>
+                <!-- НАЧАЛО ТЕКСТА ГЛАВЫ -->
+                <textarea id="editor" spellcheck="true">{{ chapter.content|default_if_none:""|escape }}</textarea>
+                <!-- КОНЕЦ ТЕКСТА ГЛАВЫ -->
+
+            </div>
+            <div class="divider"></div>
+
+            <div class="panel preview-panel" id="previewPanel">
+                <div class="panel-header">Просмотр</div>
+                <div id="preview" tabindex="-1"></div>
+            </div>
+        </section>
+    </main>
+    
+    <div id="toast" class="toast" aria-live="polite" aria-atomic="true"></div>
+    <button id="focusSink" type="button" aria-hidden="true" tabindex="-1"></button>
+    <script src="{% static 'editor.js' %}"></script>
+</body>
+</html>

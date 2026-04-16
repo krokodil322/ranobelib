@@ -2,6 +2,7 @@ from django import forms
 from django.contrib import admin
 from django.utils.timezone import localtime
 from django.utils.html import format_html
+from django.urls import reverse
 from django.utils.safestring import SafeText
 from .models import (
     Author,
@@ -35,9 +36,30 @@ class ChapterInline(admin.TabularInline):
     """
     model = Chapter
     extra = 1
-    fields =  ("title", "content", "order_num")
+    fields =  ("title", "content", "open_in_editor", "order_num")
     ordering = ("order_num",)
+    readonly_fields = ("open_in_editor",)
+    
+    
+    
+    def open_in_editor(self, obj):
+        """
+            Добавляет кнопку редактировать для каждой главы произведения.
+            Данная кнопка ведет в кастомный markdown редактор.
+        """
 
+        # тут не нужна проверка на наличие объекты в БД, ибо
+        # новую главу можно создать прямо из редактора.
+        if not obj.pk:
+            return 'Создай перед редактированием'
+        
+        # если глава есть, то подставляем в нопку URL на markdown редактор.
+        url = reverse("editor", kwargs={"slug": obj.work.slug, "chapter_id": obj.pk})
+        return format_html(
+            '<a class="button" href="{}" target="_blank">Редактировать</a>', 
+            url
+        )
+    
 
 class NoAutocompleteAdminForm(forms.ModelForm):
     """

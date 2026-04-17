@@ -11,7 +11,6 @@
 <body 
     class="theme-dark split-mode"
     data-chapter-id="{{ chapter.id }}"
-    data-save-url="{% url 'save_chapter' slug=chapter.work.slug chapter_id=chapter.id %}"
 >
     <div id="focusSink" tabindex="-1" aria-hidden="true"></div>
     <div class="top-hover-zone"></div>
@@ -72,7 +71,14 @@
         </div>
 
         <div class="toolbar-group">
-            <button type="button" id="saveChapterBtn">Сохранить главу</button>
+            <button 
+                id="saveChapterBtn"
+                type="button" 
+                data-is-new="{{ is_new_mode|yesno:"true,false"  }}"
+                data-save-url="{% if is_new_mode %}{% url 'save_chapter' slug=work.slug %}{% else %}{% url 'save_chapter' slug=chapter.work.slug chapter_id=chapter.id %}{% endif %}"
+            >
+                {% if is_new_mode %}Создать главу{% else %}Сохранить главу{% endif %}
+            </button>
         </div>
 
         <div class="toolbar-group">
@@ -86,6 +92,7 @@
             <div class="panel editor-panel" id="editorPanel">
                 <div class="panel-header">Markdown</div>
                 
+
                 <!-- НАЗВАНИЕ ГЛАВЫ -->
                 <div class="chapter-title-wrap">
                     <label for="chapterTitle" class="chapter-title-label"></label>
@@ -110,6 +117,7 @@
 
             <div class="panel preview-panel" id="previewPanel">
                 <div class="panel-header">Просмотр</div>
+                <h1 id="previewTitle"></h1>
                 <div id="preview" tabindex="-1"></div>
             </div>
         </section>

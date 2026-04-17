@@ -5,6 +5,8 @@ const toast = document.getElementById("toast");
 const editor = document.getElementById("editor");
 const preview = document.getElementById("preview");
 
+const previewTitle = document.getElementById("previewTitle");
+
 const layoutMode = document.getElementById("layoutMode");
 const themeSelect = document.getElementById("themeSelect");
 const editorFont = document.getElementById("editorFont");
@@ -121,13 +123,8 @@ function escapeHtml(value) {
 function renderMarkdown() {
     if (!editor || !preview || typeof marked === "undefined") return;
 
-    const title = chapterTitle ? chapterTitle.value.trim() : "";
-    const titleHtml = title
-        ? `<h1 class="preview-chapter-title">${escapeHtml(title)}</h1>`
-        : "";
-
-    const contentHtml = marked.parse(editor.value);
-    preview.innerHTML = titleHtml + contentHtml;
+    syncPreviewTitle();
+    preview.innerHTML = marked.parse(editor.value);
 }
 
 function saveContentToStorage() {
@@ -144,7 +141,6 @@ function loadContentFromStorage() {
         editor.value = saved;
     }
 }
-
 
 function applyLayout(mode) {
     document.body.classList.remove("split-mode", "single-mode");
@@ -433,6 +429,21 @@ document.addEventListener("mousedown", (event) => {
     clearEditorFocus();
 });
 
+document.addEventListener("input", (event) => {
+    if (event.target && event.target.id === "chapterTitle") {
+        syncPreviewTitle();
+    }
+});
+
+function syncPreviewTitle() {
+    const currentTitleInput = document.getElementById("chapterTitle");
+    const currentPreviewTitle = document.getElementById("previewTitle");
+
+    if (!currentTitleInput || !currentPreviewTitle) return;
+
+    currentPreviewTitle.textContent = currentTitleInput.value.trim() || "Без названия";
+}
+
 function initEditor() {
     if (!editor) return;
 
@@ -443,6 +454,8 @@ function initEditor() {
         renderMarkdown();
         saveContentToStorage();
     });
+
+    syncPreviewTitle();
 }
 
 function getCookie(name) {
@@ -462,13 +475,13 @@ function getCookie(name) {
 }
 
 async function saveChapterToBackend() {
-    const saveUrl = document.body.dataset.saveUrl;
+    const saveUrl = saveChapterBtn?.dataset.saveUrl;
     const csrfToken = getCookie("csrftoken");
 
     if (!saveUrl) {
         throw new Error("Не найден URL сохранения.");
     }
-
+    console.log("SAVE URL =", saveUrl);
     const response = await fetch(saveUrl, {
         method: "POST",
         headers: {
@@ -480,6 +493,14 @@ async function saveChapterToBackend() {
             content: editor ? editor.value : ""
         })
     });
+
+    const contentType = response.headers.get("content-type") || "";
+
+    if (!contentType.includes("application/json")) {
+        const text = await response.text();
+        console.error("Сервер вернул не JSON:", text);
+        throw new Error("Сервер вернул HTML вместо JSON. Проверь save_url и Django view.");
+    }
 
     const data = await response.json();
 
@@ -518,6 +539,19 @@ function getContentStorageKey() {
     return `${STORAGE_KEYS.content}_${chapterId}`;
 }
 
+function initTitleSync() {
+    if (!chapterTitle) return;
+
+    const updatePreviewTitle = () => {
+        syncPreviewTitle();
+    };
+
+    chapterTitle.addEventListener("input", updatePreviewTitle);
+    chapterTitle.addEventListener("change", updatePreviewTitle);
+
+    requestAnimationFrame(updatePreviewTitle);
+}
+
 function showToast(message, type = "success") {
     if (!toast) return;
 
@@ -540,6 +574,7 @@ function init() {
     initFontSelects();
     initToolbarHover();
     initControls();
+    initTitleSync();
     initEditor();
     initFromStorage();
     updateSingleModeControls();

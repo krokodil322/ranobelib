@@ -36,30 +36,42 @@ class ChapterInline(admin.TabularInline):
     """
     model = Chapter
     extra = 1
-    fields =  ("title", "content", "open_in_editor", "order_num")
+    fields = ("title", "content", "open_in_editor", "order_num")
     ordering = ("order_num",)
     readonly_fields = ("open_in_editor",)
     
-    
-    
-    def open_in_editor(self, obj):
+    def open_in_editor(self, obj) -> SafeText | str:
         """
-            Добавляет кнопку редактировать для каждой главы произведения.
-            Данная кнопка ведет в кастомный markdown редактор.
-        """
-
-        # тут не нужна проверка на наличие объекты в БД, ибо
-        # новую главу можно создать прямо из редактора.
-        if not obj.pk:
-            return 'Создай перед редактированием'
+            Данный метод регулирует набор кнопок на Inline любой главы.
+            
+            Если произведения к которому привязан Inline еще нет в БД, то
+            выводит строку с сообщением об необходимости сохранить произведение
+            перед созданием глав.
+            
+            Если произведение есть в БД, а глав нет, то после добавления новой главы
+            в Inline у такой главы должна появится кнопка Создать главу.
+            
+            Если произведение есть в БД, и глава есть тоже, то у такой главы в Inline
+            появится кнопка редактировать.
+        """        
+        # Если произведение уже есть в БД и данная глава уже существует.
+        if obj.pk and obj.work_id != None and obj.work.slug != None:
+            # если глава есть, то подставляем в кнопку URL на markdown редактор.
+            url = reverse("editor", kwargs={"slug": obj.work.slug, "chapter_id": obj.pk})
+            return format_html(
+                '<a class="button" href="{}" target="_blank">Редактировать</a>', 
+                url
+            )
+        # если главы нет, то нужно подставить кнопку Создать главу
+        elif not obj.pk and obj.work_id != None and obj.work.slug != None:
+            url = reverse("editor", kwargs={"slug": obj.work.slug})
+            return format_html(
+                '<a class="button" href="{}" target="_blank">Создать главу</a>',
+                url
+            )
+        # если проивезедения не существует.
+        return format_html('<span style="color:#999;">Сначала сохрани произведение</span>') 
         
-        # если глава есть, то подставляем в нопку URL на markdown редактор.
-        url = reverse("editor", kwargs={"slug": obj.work.slug, "chapter_id": obj.pk})
-        return format_html(
-            '<a class="button" href="{}" target="_blank">Редактировать</a>', 
-            url
-        )
-    
 
 class NoAutocompleteAdminForm(forms.ModelForm):
     """
@@ -89,6 +101,9 @@ class NoAutocompleteAdminForm(forms.ModelForm):
 # ================ CПРАВОЧНИКИ ================
 
 class Admin(admin.ModelAdmin):   
+    class Media:
+        js = ('custom_required.js',)
+        
     form = NoAutocompleteAdminForm 
     list_display = ("id", "name")
     search_fields = ("name",)
@@ -149,7 +164,7 @@ class WorksAdmin(admin.ModelAdmin):
     """Регистрация и настройка модели Work в админке"""
     
     class Media:
-        js = ('admin/form_persist.js',)
+        js = ('custom_required.js',)
     
     # данный атрибут определяет какие колонки
     # модели Work будут показываться в админке.
@@ -317,6 +332,9 @@ class WorksAdmin(admin.ModelAdmin):
 @admin.register(Chapter)
 class ChaptersAdmin(admin.ModelAdmin):
     """Регистрация и настройка глав в админке"""
+    class Media:
+        js = ('custom_required.js',)
+    
     list_display = (
         "id",
         "work",

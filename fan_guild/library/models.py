@@ -652,7 +652,7 @@ class Chapter(models.Model):
         
         # если произведение опубликовано, то и добавленные главы тоже публикуем.
         if self.work.is_published:
-            self.published_at = timezone.now.strftime(r"%d.%m.%Y %H:%M")
+            self.published_at = timezone.now()
 
         # вызываем стандартное  Django поведение
         super().save(*args, **kwargs)

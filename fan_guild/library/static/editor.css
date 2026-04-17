@@ -860,12 +860,13 @@ body.view-preview #editor {
     background: #b63b3b;
 }
 
-.preview-chapter-title {
-    margin: 0 0 24px 0;
+
+#previewTitle {
+    margin: 0 5 24px 0;
     font-size: 25px;
     line-height: 1.25;
     font-weight: 700;
-    text-align: left;
+    text-align: center;
 }
 
 .back-to-admin-btn {

@@ -15,7 +15,7 @@ pip install pillow
 echo ==============================
 
 echo === Переход в проект ===
-cd fan_guild
+cd /d %~dp0fan_guild
 echo ========================
 
 echo === Миграции ===
